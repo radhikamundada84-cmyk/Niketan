@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Niketan - Explore</title>
+    <!-- Google Fonts for elegant typography -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Seamless 5-Image CSS Slider */
+        .slider-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            width: 600vw;
+            /* 5 unique + 1 duplicate */
+            height: 100%;
+            animation: slideAuto 25s infinite cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            image-rendering: high-quality;
+            image-rendering: -webkit-optimize-contrast;
+            filter: contrast(1.15) saturate(1.2) brightness(1.02);
+            transform: translateZ(0);
+            /* Hardware acceleration */
+        }
+
+        .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            pointer-events: none;
+        }
+
+        @keyframes slideAuto {
+
+            0%,
+            15% {
+                transform: translateX(0);
+            }
+
+            20%,
+            35% {
+                transform: translateX(-100vw);
+            }
+
+            40%,
+            55% {
+                transform: translateX(-200vw);
+            }
+
+            60%,
+            75% {
+                transform: translateX(-300vw);
+            }
+
+            80%,
+            95% {
+                transform: translateX(-400vw);
+            }
+
+            100% {
+                transform: translateX(-500vw);
+            }
+        }
+
+
+        /* Navigation Bar */
+        .navbar {
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* User Profile Area in Navbar */
+        .user-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        #profile-pic {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            object-fit: cover;
+        }
+
+        .logout-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            padding: 6px 15px;
+            font-weight: 400;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Main Hero Section */
+        .hero-section {
+            height: calc(100vh - 120px);
+            display: flex;
+            align-items: center;
+            padding: 0 100px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 78px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.9;
+            max-width: 450px;
+            font-weight: 300;
+        }
+
+        /* Right Side Info Card */
+        .info-card {
+            position: absolute;
+            right: 150px;
+            top: 35%;
+            max-width: 350px;
+            animation: slideInRight 1.2s ease-in-out;
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .info-desc {
+            display: flex;
+            gap: 15px;
+        }
+
+        .info-desc .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+            margin-top: 5px;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+        }
+
+        .info-desc p {
+            font-size: 13px;
+            line-height: 1.6;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CSS Slider Background -->
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slide" style="background-image: url('slider1.jpg')"></div>
+            <div class="slide" style="background-image: url('slider2.jpg')"></div>
+            <div class="slide" style="background-image: url('slider3.png')"></div>
+            <div class="slide" style="background-image: url('slider4.jpg')"></div>
+            <div class="slide" style="background-image: url('slider5.jpg')"></div>
+            <div class="slide" style="background-image: url('slider1.jpg')"></div>
+        </div>
+        <div class="slider-overlay"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="navbar-brand">Tourist Niketan</div>
+            <div class="nav-links">
+                <a href="#">Discover</a>
+                <a href="#">Maharashtra's History</a>
+                <a href="#">Events</a>
+                <a href="#">Publications</a>
+            </div>
+        </div>
+
+        <div class="user-nav">
+            <img id="profile-pic" src="" alt="User" title="User Profile">
+            <button id="logout-btn" class="logout-btn">Log Out</button>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover<br>Maharashtra.</h1>
+            <p class="hero-subtitle">From timeless monuments to iconic landmarks, explore the history and culture behind
+                Maharashtra's greatest destinations.</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // Retrieve session data from localStorage
+            const sessionData = localStorage.getItem('sessionUser');
+
+            if (!sessionData) {
+                // Not authenticated, redirect back to login
+                // window.location.href = 'index.html'; // Un-comment in prod
+            }
+
+            if (sessionData) {
+                const user = JSON.parse(sessionData);
+                document.getElementById('profile-pic').src = user.picture;
+            } else {
+                document.getElementById('profile-pic').style.display = 'none';
+            }
+        }
+
+        // Logout Event
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('sessionUser');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+
+</html>
