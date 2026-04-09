@@ -131,7 +131,7 @@ async function handleSendMessage(queryOverride = null) {
 
     try {
         // API Integration with hardcoded IP
-        const response = await fetch('http://192.168.111.25:3000/api/chat', {
+        const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

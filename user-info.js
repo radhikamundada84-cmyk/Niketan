@@ -7,8 +7,8 @@
  */
 
 // ─── Supabase Setup ───
-const SUPABASE_URL = 'https://dargdraljdimmiygkarr.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRhcmdkcmFsamRpbW1peWdrYXJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2OTAyMjQsImV4cCI6MjA5MTI2NjIyNH0.I2RMrSmP13COFUqK9T2C9Widh88h8P3z_kzk7uw9zQA';
+const SUPABASE_URL = '';
+const SUPABASE_ANON_KEY = '';
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ─── DOM References ───
@@ -106,7 +106,7 @@ form.addEventListener('submit', async (e) => {
 
         // Also try sending to teammate's backend (non-blocking)
         try {
-            fetch('http://192.168.111.25:3000/api/save-user', {
+            fetch('', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, age, email: currentUserEmail }),
