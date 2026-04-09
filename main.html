@@ -25,38 +25,21 @@
             overflow-x: hidden;
         }
 
-        /* Seamless 5-Image CSS Slider */
-        .slider-container {
+        /* Single Background Image */
+        .background-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
             z-index: -1;
-            overflow: hidden;
-        }
-
-        .slider-wrapper {
-            display: flex;
-            width: 600vw;
-            /* 5 unique + 1 duplicate */
-            height: 100%;
-            animation: slideAuto 25s infinite cubic-bezier(0.77, 0, 0.175, 1);
-        }
-
-        .slide {
-            width: 100vw;
-            height: 100%;
+            /* Updated to use the image you just uploaded! */
+            background-image: url('multimodal_bg.jpg');
             background-size: cover;
             background-position: center;
-            image-rendering: high-quality;
-            image-rendering: -webkit-optimize-contrast;
-            filter: contrast(1.15) saturate(1.2) brightness(1.02);
-            transform: translateZ(0);
-            /* Hardware acceleration */
         }
 
-        .slider-overlay {
+        .background-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -64,38 +47,6 @@
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
             pointer-events: none;
-        }
-
-        @keyframes slideAuto {
-
-            0%,
-            15% {
-                transform: translateX(0);
-            }
-
-            20%,
-            35% {
-                transform: translateX(-100vw);
-            }
-
-            40%,
-            55% {
-                transform: translateX(-200vw);
-            }
-
-            60%,
-            75% {
-                transform: translateX(-300vw);
-            }
-
-            80%,
-            95% {
-                transform: translateX(-400vw);
-            }
-
-            100% {
-                transform: translateX(-500vw);
-            }
         }
 
 
@@ -269,22 +220,1092 @@
                 transform: translateX(0);
             }
         }
+
+        /* Attractions Section */
+        .attractions-section {
+            background-color: #f7fbff;
+            color: #333333;
+            padding: 80px 100px 40px 100px;
+            position: relative;
+            z-index: 100;
+            /* Stays above fixed slider */
+            text-align: center;
+        }
+
+        .attractions-header {
+            margin-bottom: 50px;
+        }
+
+        .attractions-header h2 {
+            font-size: 54px;
+            font-weight: 900;
+            color: #6eb7eb;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .attractions-header p {
+            font-size: 16px;
+            color: #8cbbe1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: 500;
+            margin-top: -10px;
+        }
+
+        .attractions-header p::before,
+        .attractions-header p::after {
+            content: "";
+            height: 1px;
+            width: 50px;
+            background-color: #c0dbf1;
+        }
+
+        .attractions-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: nowrap;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .attraction-card {
+            flex: 1;
+            min-width: 200px;
+            max-width: 350px;
+            aspect-ratio: 3 / 4;
+            height: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .attraction-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-inner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .attraction-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .explore-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .attraction-card:hover .explore-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .attraction-card:hover h4 {
+            transform: translateY(-5px);
+        }
+
+        /* Detail Carousel Modal */
+        .explore-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(235, 240, 245, 0.98);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            font-size: 50px;
+            cursor: pointer;
+            color: #333;
+            z-index: 100;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            position: absolute;
+            width: 55vw;
+            height: 100%;
+            border-radius: 30px;
+            background-size: cover;
+            background-position: center;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: scale(0.6) translateX(0);
+            z-index: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .carousel-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+            z-index: 5;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-item.prev {
+            opacity: 0.5;
+            transform: scale(0.7) translateX(-70%);
+            z-index: 3;
+        }
+
+        .carousel-item.next {
+            opacity: 0.5;
+            transform: scale(0.7) translateX(70%);
+            z-index: 3;
+        }
+
+        .carousel-info {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            right: 40px;
+            color: white;
+            z-index: 10;
+        }
+
+        .carousel-info h3 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            color: #ffb703;
+        }
+
+        .carousel-info p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .carousel-info .location-marker {
+            position: absolute;
+            bottom: 5px;
+            right: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 40px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .discover-more-btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .discover-more-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Mood Explorer Section */
+        .mood-explorer-section {
+            background-color: #ffffff;
+            padding: 20px 100px 80px 100px;
+            text-align: center;
+        }
+
+        .mood-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .mood-header p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+
+        .mood-search-container {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            position: relative;
+            display: flex;
+        }
+
+        #mood-search {
+            flex: 1;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 30px 0 0 30px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        #mood-search:focus {
+            border-color: #ff0000;
+        }
+
+        .mood-search-btn {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 0 35px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+        }
+
+        .mood-search-btn:hover {
+            background: #cc0000;
+        }
+
+        .mood-chips {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .mood-chip {
+            background: #f0f5fa;
+            border: 1px solid #dce5ee;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #444;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .mood-chip:hover,
+        .mood-chip.active {
+            background: #ff0000;
+            color: white;
+            border-color: #ff0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .mood-results {
+            display: flex;
+            justify-content: flex-start;
+            gap: 25px;
+            flex-wrap: nowrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding: 10px 20px 30px;
+        }
+
+        .mood-result-card {
+            width: 250px;
+            min-width: 250px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            border: 1px solid #f0f0f0;
+        }
+
+        .mood-result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .mood-result-img {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mood-result-content {
+            padding: 20px;
+        }
+
+        .mood-result-content h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .mood-result-content p {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        /* Regions Slider */
+        .regions-section {
+            position: relative;
+            padding: 60px 0 40px 0;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+
+        .regions-bg-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background-color: #e53935; /* Primary red from image */
+            z-index: 1;
+        }
+
+        .regions-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .regions-header h2 {
+            font-size: 54px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 2px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .regions-header p {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .regions-header p::before,
+        .regions-header p::after {
+            content: "";
+            height: 1px;
+            width: 50px;
+            background-color: #ffffff;
+            opacity: 0.5;
+        }
+
+        .regions-carousel-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .regions-track {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding: 10px 40px 20px 40px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .regions-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .region-card {
+            min-width: 280px;
+            max-width: 280px;
+            background: #f1f1f1;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: left;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .region-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .region-img {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .region-info {
+            padding: 25px 20px;
+        }
+
+        .region-tag {
+            color: #ee2e31;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .region-title {
+            color: #111;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .regions-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .regions-controls button {
+            background: transparent;
+            border: none;
+            font-size: 40px;
+            color: #111;
+            cursor: pointer;
+            transition: transform 0.2s;
+            line-height: 1;
+        }
+
+        .regions-controls button:hover {
+            transform: translateX(5px);
+        }
+        .regions-controls button:first-child:hover {
+            transform: translateX(-5px);
+        }
+
+        /* ─── Detail Modal ─── */
+        .detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 2000;
+            overflow-y: auto;
+            animation: detailFadeIn 0.4s ease;
+        }
+
+        @keyframes detailFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .detail-modal.show {
+            display: block;
+        }
+
+        .detail-hero {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .detail-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 40%, rgba(0,0,0,0.85));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 50px 80px;
+            color: white;
+        }
+
+        .detail-hero-overlay h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .detail-hero-overlay .detail-location {
+            font-size: 16px;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .detail-close-btn {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .detail-close-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        .detail-back-btn {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .detail-back-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .detail-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 50px 80px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .detail-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+
+        .detail-info p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .detail-info .read-more-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e53935;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .detail-info .read-more-btn:hover {
+            background: #c62828;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(229, 57, 53, 0.3);
+        }
+
+        .detail-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail-map {
+            width: 100%;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .detail-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .detail-info-card {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .detail-info-card .info-row {
+            margin-bottom: 16px;
+        }
+
+        .detail-info-card .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-info-card .info-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #e53935;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .detail-info-card .info-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .detail-weather {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #fff5f5, #fef2f2);
+            border-radius: 10px;
+            border: 1px solid #fecaca;
+        }
+
+        .detail-weather .temp {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e53935;
+        }
+
+        .detail-weather .temp-label {
+            font-size: 12px;
+            color: #888;
+        }
+
+        @media (max-width: 900px) {
+            .detail-body {
+                grid-template-columns: 1fr;
+                padding: 30px 20px 50px;
+                gap: 30px;
+            }
+
+            .detail-hero {
+                height: 35vh;
+            }
+
+            .detail-hero-overlay {
+                padding: 30px;
+            }
+
+            .detail-hero-overlay h1 {
+                font-size: 32px;
+            }
+        }
+
+        /* ─── Floating Chatbot Widget ─── */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e53935, #c62828);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(229, 57, 53, 0.45);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.55);
+        }
+
+        .chatbot-toggle.active {
+            transform: rotate(90deg);
+            background: #333;
+        }
+
+        .chatbot-toggle svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+
+        .chatbot-label {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 3000;
+            animation: labelBounce 2s ease infinite;
+            white-space: nowrap;
+        }
+
+        .chatbot-label::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 22px;
+            width: 12px;
+            height: 12px;
+            background: #1a1a2e;
+            transform: rotate(45deg);
+        }
+
+        .chatbot-label.hide {
+            display: none;
+        }
+
+        @keyframes labelBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 380px;
+            height: 520px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            z-index: 3001;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chatbot-container.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, #e53935, #c62828);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+
+        .chatbot-header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chatbot-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .chatbot-header-text h4 {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .chatbot-header-text span {
+            color: rgba(255,255,255,0.8);
+            font-size: 11px;
+        }
+
+        .chatbot-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .chatbot-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Welcome screen */
+        .chatbot-welcome {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .chatbot-welcome .welcome-emoji {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .chatbot-welcome h3 {
+            color: #1a1a2e;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .chatbot-welcome p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .chatbot-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .suggestion-chip {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #e53935;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .suggestion-chip:hover {
+            background: #e53935;
+            color: #fff;
+            border-color: #e53935;
+            transform: translateY(-1px);
+        }
+
+        /* Chat display area */
+        #chat-display-area {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px 18px;
+            overflow-y: auto;
+            background: #f9fafb;
+        }
+
+        #chat-display-area::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #chat-display-area::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 4px;
+        }
+
+        /* Chat input area */
+        .chatbot-input-area {
+            display: flex;
+            align-items: center;
+            padding: 12px 14px;
+            gap: 10px;
+            border-top: 1px solid #f0f0f0;
+            background: #fff;
+            flex-shrink: 0;
+        }
+
+        .chatbot-input-area input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 25px;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            background: #f9fafb;
+            transition: border-color 0.2s;
+        }
+
+        .chatbot-input-area input:focus {
+            border-color: #e53935;
+            background: #fff;
+        }
+
+        .chatbot-input-area button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #e53935, #c62828);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .chatbot-input-area button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(229, 57, 53, 0.4);
+        }
+
+        .chatbot-input-area button svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        @media (max-width: 500px) {
+            .chatbot-container {
+                width: calc(100vw - 20px);
+                height: calc(100vh - 120px);
+                right: 10px;
+                bottom: 85px;
+                border-radius: 12px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- CSS Slider Background -->
-    <div class="slider-container">
-        <div class="slider-wrapper">
-            <div class="slide" style="background-image: url('slider1.jpg')"></div>
-            <div class="slide" style="background-image: url('slider2.jpg')"></div>
-            <div class="slide" style="background-image: url('slider3.png')"></div>
-            <div class="slide" style="background-image: url('slider4.jpg')"></div>
-            <div class="slide" style="background-image: url('slider5.jpg')"></div>
-            <div class="slide" style="background-image: url('slider1.jpg')"></div>
-        </div>
-        <div class="slider-overlay"></div>
+    <!-- Single Background Image -->
+    <div class="background-container">
+        <div class="background-overlay"></div>
     </div>
 
     <nav class="navbar">
@@ -312,6 +1333,187 @@
         </div>
     </div>
 
+    <section class="attractions-section">
+        <div class="attractions-header">
+            <h2>MAHARASHTRA</h2>
+            <p>Where Every Journey Tells a Story</p>
+        </div>
+        <div class="attractions-gallery">
+            <div class="attraction-card" style="background-image: url('slider5.jpg')">
+                <div class="card-inner-overlay">
+                    <h4>Pune</h4>
+                    <button class="explore-btn" onclick="openExploreModal(0)">Explore</button>
+                </div>
+            </div>
+            <div class="attraction-card" style="background-image: url('nashik_temple.jpg')">
+                <div class="card-inner-overlay">
+                    <h4>Nashik</h4>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+            <div class="attraction-card" style="background-image: url('mumbai.jpg')">
+                <div class="card-inner-overlay">
+                    <h4>Mumbai</h4>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+            <div class="attraction-card" style="background-image: url('kolhapur.png')">
+                <div class="card-inner-overlay">
+                    <h4>Kolhapur</h4>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Explorer Section -->
+    <section class="mood-explorer-section" id="mood-section">
+        <div class="mood-header">
+            <h2>Let Your Vibe Guide You</h2>
+            <p>Discover places that match your moment.</p>
+        </div>
+
+        <div class="mood-search-container">
+            <input type="text" id="mood-search" placeholder="Type your mood... (e.g. spiritual, nature, history)"
+                oninput="handleMoodSearch()">
+            <button class="mood-search-btn" onclick="handleMoodSearch()">Search</button>
+        </div>
+
+        <div class="mood-chips">
+            <button class="mood-chip" onclick="selectMood('spiritual', this)">🧘 Spiritual</button>
+            <button class="mood-chip" onclick="selectMood('historic', this)">🏰 Historical</button>
+            <button class="mood-chip" onclick="selectMood('nature', this)">🌲 Nature & Peace</button>
+            <button class="mood-chip" onclick="selectMood('city', this)">🏙️ City Vibes</button>
+        </div>
+
+        <div class="mood-results" id="mood-results">
+            <!-- Suggested places populated here -->
+        </div>
+    </section>
+
+    <!-- Regions of Maharashtra Section -->
+    <section class="regions-section">
+        <div class="regions-bg-banner"></div>
+        <div class="regions-content">
+            <div class="regions-header">
+                <h2>REGIONS OF MAHARASHTRA</h2>
+                <p>explore the diverse cultures</p>
+            </div>
+            
+            <div class="regions-carousel-container">
+                <div class="regions-track" id="regionsTrack">
+                    <!-- Kokan -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('kokan_coast.png')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Kokan</div>
+                            <div class="region-title">Coastal Beauty</div>
+                        </div>
+                    </div>
+                    <!-- Paschim Maharashtra -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('paschim_maharashtra.png')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Paschim Maharashtra</div>
+                            <div class="region-title">Cultural Heartland</div>
+                        </div>
+                    </div>
+                    <!-- Marathwada -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('ellora_caves.jpg')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Marathwada</div>
+                            <div class="region-title">Historical Legacy</div>
+                        </div>
+                    </div>
+                    <!-- Khandesh -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('historic_3.jpg')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Khandesh</div>
+                            <div class="region-title">Nature Reserve</div>
+                        </div>
+                    </div>
+                    <!-- Vidarbha -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('vidarbha_temple.jpg')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Vidarbha</div>
+                            <div class="region-title">Spiritual Peace</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="regions-controls">
+                <button onclick="document.getElementById('regionsTrack').scrollBy({left: -320, behavior: 'smooth'})">&#8592;</button>
+                <button onclick="document.getElementById('regionsTrack').scrollBy({left: 320, behavior: 'smooth'})">&#8594;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Modal Carousel -->
+    <div id="explore-modal" class="explore-modal">
+        <div class="close-modal" onclick="closeExploreModal()">&times;</div>
+        <div class="carousel-track" id="carousel-track">
+            <!-- Carousel items dynamically injected here -->
+        </div>
+        <div class="carousel-controls">
+            <span onclick="prevSlide()">&#8592;</span>
+            <span onclick="nextSlide()">&#8594;</span>
+        </div>
+        <button class="discover-more-btn" onclick="openDetailModal()">Discover more</button>
+    </div>
+
+    <!-- Place Detail Modal -->
+    <div id="detail-modal" class="detail-modal">
+        <div class="detail-hero" id="detail-hero">
+            <button class="detail-back-btn" onclick="closeDetailModal()">← Back to Explore</button>
+            <button class="detail-close-btn" onclick="closeDetailModal()">&times;</button>
+            <div class="detail-hero-overlay">
+                <h1 id="detail-title"></h1>
+                <div class="detail-location">
+                    <span>📍</span>
+                    <span id="detail-location"></span>
+                </div>
+            </div>
+        </div>
+        <div class="detail-body">
+            <div class="detail-info">
+                <h2 id="detail-subtitle"></h2>
+                <p id="detail-description"></p>
+                <a class="read-more-btn" id="detail-maps-link" href="#" target="_blank">Open in Google Maps</a>
+            </div>
+            <div class="detail-sidebar">
+                <div class="detail-map" id="detail-map-container">
+                    <!-- Map iframe injected by JS -->
+                </div>
+                <div class="detail-info-card">
+                    <div class="detail-weather" id="detail-weather">
+                        <div>
+                            <div class="temp" id="detail-temp"></div>
+                            <div class="temp-label">Current Season</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 18px;">
+                        <div class="info-row">
+                            <div class="info-label">Nearest Airport</div>
+                            <div class="info-value" id="detail-airport"></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Nearest Railway Station</div>
+                            <div class="info-value" id="detail-railway"></div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Best Time to Visit</div>
+                            <div class="info-value" id="detail-best-time"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         window.onload = function () {
             // Retrieve session data from localStorage
@@ -319,23 +1521,359 @@
 
             if (!sessionData) {
                 // Not authenticated, redirect back to login
-                // window.location.href = 'index.html'; // Un-comment in prod
+                window.location.href = 'index.html';
+                return;
             }
 
-            if (sessionData) {
-                const user = JSON.parse(sessionData);
-                document.getElementById('profile-pic').src = user.picture;
-            } else {
-                document.getElementById('profile-pic').style.display = 'none';
-            }
+            const user = JSON.parse(sessionData);
+            document.getElementById('profile-pic').src = user.picture;
         }
 
         // Logout Event
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem('sessionUser');
+            localStorage.removeItem('userInfoCompleted');
             window.location.href = 'index.html';
         });
+
+        // Explore Modal Logic
+        let currentExploreIndex = 0;
+        const exploreData = [
+            {
+                title: "Dagdusheth Ganpati Temple",
+                subtitle: "Pune's most beloved Ganpati temple",
+                location: "Pune, Maharashtra",
+                img: "slider5.jpg",
+                description: "The Dagdusheth Halwai Ganapati Temple is one of the most famous and richest temples in Pune, dedicated to Lord Ganesha. Built in 1893 by Dagdusheth Halwai, a sweetmeat seller, the temple was constructed in memory of his young son who died of plague. The idol is adorned with nearly 40 kg of gold ornaments, making it a stunning sight for devotees and visitors alike.\n\nThe temple is centrally located near Shaniwar Wada and is visited by thousands of devotees daily. During the Ganesh Chaturthi festival, the temple becomes the epicenter of celebrations in Pune, attracting lakhs of visitors from across India.",
+                lat: 18.5163,
+                lng: 73.8567,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Pune Junction Railway Station",
+                bestTime: "September – February",
+                temp: "22 – 34°C"
+            },
+            {
+                title: "Sarasbaug",
+                subtitle: "A peaceful garden with a famous Ganpati temple",
+                location: "Pune, Maharashtra",
+                img: "nashik.jpg",
+                description: "Sarasbaug is one of the oldest and most popular gardens in Pune, originally built by the Peshwa rulers. The garden is home to the famous Talyatla Ganpati, a revered Ganesha idol placed in the center of a small pond. The park spans a vast area with well-maintained lawns, jogging tracks, and play areas.\n\nSarasbaug is a favorite among locals for morning walks, yoga sessions, and family outings. The serene atmosphere, combined with the historical Ganpati temple, makes it a perfect blend of nature, peace, and spirituality in the heart of the city.",
+                lat: 18.5003,
+                lng: 73.8567,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Swargate Bus Stand / Pune Junction",
+                bestTime: "October – March",
+                temp: "20 – 32°C"
+            },
+            {
+                title: "Shaniwar Wada",
+                subtitle: "A symbol of Pune's history and Maratha legacy",
+                location: "Pune, Maharashtra",
+                img: "shaniwar_modal.jpg",
+                description: "Shaniwar Wada is a majestic historical fortification in the heart of Pune, built in 1732 by Bajirao I of the Peshwa dynasty. It served as the seat of the Peshwa rulers of the Maratha Empire until 1818. The fort was largely destroyed in a fire in 1828, but the massive walls, grand gateway, and the lotus-shaped fountain still stand as a proud testament to Maratha architecture.\n\nThe fort hosts a mesmerizing Sound and Light Show every evening that narrates the story of the Peshwas and the glorious Maratha Empire. Walking through its ruins, one can almost feel the echoes of a powerful empire that once ruled much of India.",
+                lat: 18.5196,
+                lng: 73.8553,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Pune Junction Railway Station",
+                bestTime: "October – February",
+                temp: "18 – 30°C"
+            },
+            {
+                title: "Friendship Garden",
+                subtitle: "A beautiful garden inspired by Japanese design",
+                location: "Pune, Maharashtra",
+                img: "sarasbaug_park.png",
+                description: "The Pune-Okayama Friendship Garden, commonly known as Friendship Garden, is a Japanese-inspired garden established in 2007 to celebrate the sister-city relationship between Pune and Okayama, Japan. Spanning 10 acres, the garden features a beautiful bamboo grove, stone lanterns, a zen rock garden, and a serene koi fish pond.\n\nThe garden offers a unique escape from the bustling city, with winding pathways through manicured landscapes that evoke the tranquility of traditional Japanese gardens. It is one of the largest gardens of its kind in India and a favorite spot for photography, meditation, and peaceful strolls.",
+                lat: 18.5365,
+                lng: 73.8260,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Shivajinagar Railway Station",
+                bestTime: "August – January",
+                temp: "20 – 33°C"
+            },
+            {
+                title: "Streets Of Europe",
+                subtitle: "European-style architecture and vibrant vibes",
+                location: "Pune, Maharashtra",
+                img: "slider1.jpg",
+                description: "Streets of Europe is a unique commercial and entertainment destination in Pune that recreates the charm of European boulevards right in the heart of India. Featuring stunning European-style facades, cobblestone-inspired pathways, and vibrant outdoor cafes, this destination offers a one-of-a-kind experience.\n\nVisitors can enjoy a variety of international cuisines, boutique shopping, and live entertainment amidst architecture inspired by the streets of Paris, Venice, and Barcelona. The vibrant atmosphere, colorful buildings, and Instagram-worthy corners make it a must-visit spot for food lovers and photography enthusiasts.",
+                lat: 18.5617,
+                lng: 73.9168,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Hadapsar Railway Station",
+                bestTime: "Year-round",
+                temp: "22 – 35°C"
+            },
+            {
+                title: "Sky Walk",
+                subtitle: "A perfect spot to enjoy city views from above",
+                location: "Pune, Maharashtra",
+                img: "slider3.png",
+                description: "The Sky Walk near Pune offers a breathtaking aerial experience where visitors can walk on a glass-floor bridge suspended high above the ground. This thrilling attraction provides panoramic views of the surrounding Sahyadri mountains, lush green valleys, and the winding rivers below.\n\nIdeal for adventure seekers and nature lovers alike, the Sky Walk combines the excitement of height with the beauty of Maharashtra's Western Ghats. The transparent glass walkway creates a sensation of walking on air, making it an unforgettable experience for visitors of all ages.",
+                lat: 18.6165,
+                lng: 73.7574,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Lonavala Railway Station",
+                bestTime: "October – March",
+                temp: "18 – 28°C"
+            },
+            {
+                title: "Pataleshwar Cave Temple",
+                subtitle: "An ancient rock-cut cave temple dedicated to Lord Shiva",
+                location: "Pune, Maharashtra",
+                img: "cave_modal.jpg",
+                description: "The Pataleshwar Cave Temple is an ancient rock-cut temple dating back to the 8th century, carved entirely out of a single basalt rock. Dedicated to Lord Shiva (Pataleshwar — Lord of the Underworld), this temple is a remarkable example of early Indian rock-cut architecture, similar to the famous Elephanta Caves.\n\nLocated in the heart of Pune on Jangli Maharaj Road, the temple features a Nandi mandapa (hall), a circular sanctum with a Shivalinga, and beautiful stone carvings. Despite being an incomplete excavation, it stands as one of Pune's most important heritage sites and a peaceful retreat in the middle of the city's chaos.",
+                lat: 18.5214,
+                lng: 73.8429,
+                airport: "Pune International Airport (PNQ)",
+                railway: "Shivajinagar Railway Station",
+                bestTime: "October – February",
+                temp: "20 – 32°C"
+            }
+        ];
+
+        function openExploreModal(index) {
+            currentExploreIndex = index;
+            document.getElementById('explore-modal').style.display = 'flex';
+            updateCarousel();
+        }
+
+        function closeExploreModal() {
+            document.getElementById('explore-modal').style.display = 'none';
+        }
+
+        // ─── Detail Modal Logic ───
+        function openDetailModal() {
+            const place = exploreData[currentExploreIndex];
+            
+            // Fill in detail modal content
+            document.getElementById('detail-hero').style.backgroundImage = `url('${place.img}')`;
+            document.getElementById('detail-title').textContent = place.title;
+            document.getElementById('detail-location').textContent = place.location;
+            document.getElementById('detail-subtitle').textContent = place.subtitle;
+            document.getElementById('detail-description').textContent = place.description;
+            document.getElementById('detail-airport').textContent = place.airport;
+            document.getElementById('detail-railway').textContent = place.railway;
+            document.getElementById('detail-best-time').textContent = place.bestTime;
+            document.getElementById('detail-temp').textContent = place.temp;
+
+            // Google Maps link
+            document.getElementById('detail-maps-link').href = 
+                `https://www.google.com/maps?q=${place.lat},${place.lng}`;
+
+            // OpenStreetMap embed
+            const mapContainer = document.getElementById('detail-map-container');
+            mapContainer.innerHTML = `<iframe 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=${place.lng - 0.02},${place.lat - 0.015},${place.lng + 0.02},${place.lat + 0.015}&layer=mapnik&marker=${place.lat},${place.lng}" 
+                loading="lazy"></iframe>`;
+
+            // Hide explore modal, show detail modal
+            document.getElementById('explore-modal').style.display = 'none';
+            document.getElementById('detail-modal').classList.add('show');
+            document.getElementById('detail-modal').scrollTop = 0;
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detail-modal').classList.remove('show');
+            // Re-open the explore carousel
+            document.getElementById('explore-modal').style.display = 'flex';
+        }
+
+        function nextSlide() {
+            currentExploreIndex = (currentExploreIndex + 1) % exploreData.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentExploreIndex = (currentExploreIndex - 1 + exploreData.length) % exploreData.length;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const track = document.getElementById('carousel-track');
+            track.innerHTML = '';
+
+            exploreData.forEach((data, i) => {
+                let className = 'carousel-item';
+                if (i === currentExploreIndex) className += ' active';
+                else if (i === (currentExploreIndex - 1 + exploreData.length) % exploreData.length) className += ' prev';
+                else if (i === (currentExploreIndex + 1) % exploreData.length) className += ' next';
+                else className += ' hidden'; // Not visible
+
+                const el = document.createElement('div');
+                el.className = className;
+                el.style.backgroundImage = `url('${data.img}')`;
+                el.innerHTML = `
+                    <div class="carousel-info">
+                        <h3>${data.title}</h3>
+                        <p>${data.subtitle}</p>
+                        <div class="location-marker">📍 ${data.location}</div>
+                    </div>
+                `;
+                track.appendChild(el);
+            });
+        }
+
+        // Mood Explorer Logic
+        const moodDatabase = {
+            spiritual: [
+                { title: "Ramdara Temple", desc: "A quiet temple where nature and devotion come together beautifully.", img: "spiritual_1.png" },
+                { title: "Isckon Temple", desc: "A beautiful temple offering calm vibes and Krishna devotion", img: "spiritual_2.jpg" },
+                { title: "Bhimashankar Temple", desc: "A holy place dedicated to Lord Shiva, known for its natural beauty.", img: "spiritual_3.png" },
+                { title: "Pataleshwar Cave Temple", desc: "A hidden heritage site in Pune with timeless rock-cut design.", img: "spiritual_4.jpg" }
+            ],
+            historic: [
+                { title: "Shaniwar Wada", desc: "A magnificent historic fortification representing the legacy of the Maratha Empire.", img: "historic_1.jpg" },
+                { title: "Raigad Fort", desc: "A sweeping historic fortress offering stunning climbing views over valleys.", img: "historic_2.jpg" },
+                { title: "Vetal Tekdi", desc: "An ancient rocky plateau offering a sprawling escape from the city.", img: "historic_3.jpg" },
+                { title: "Aga Khan Palace", desc: "A majestic palace with deep ties to India's freedom movement.", img: "historic_4.jpg" }
+            ],
+            nature: [
+                { title: "Beautiful Sarasbaug", desc: "A peaceful garden for a calm stroll.", img: "nature_1.jpg" },
+                { title: "Friendship Garden", desc: "Breathe in peace at this serene environment.", img: "nature_2.jpg" },
+                { title: "Espresso Garden", desc: "A cozy café in Pune known for its great coffee and relaxing vibe.", img: "nature_3.jpg" },
+                { title: "Panshet Dam", desc: "A scenic dam near Pune, perfect for nature views and relaxation.", img: "nature_4.jpg" }
+            ],
+            city: [
+                { title: "Streets of Europe", desc: "Vibrant architecture and modern commerce.", img: "city_1.jpg" },
+                { title: "Sky Walk Views", desc: "Enjoy majestic city views from high above.", img: "city_2.png" },
+                { title: "Koregaon Park", desc: "A stylish area in Pune blending nature, food, and nightlife.", img: "city_3.png" },
+                { title: "Phoenix Marketcity", desc: "A popular shopping mall in Pune known for brands, food, and entertainment.", img: "city_4.jpg" }
+            ]
+        };
+
+        function selectMood(moodType, element) {
+            document.querySelectorAll('.mood-chip').forEach(chip => chip.classList.remove('active'));
+            if (element) element.classList.add('active');
+
+            document.getElementById('mood-search').value = moodType;
+            renderMoodResults(moodDatabase[moodType] || []);
+        }
+
+        function handleMoodSearch() {
+            const query = document.getElementById('mood-search').value.toLowerCase().trim();
+            if (!query) {
+                document.getElementById('mood-results').innerHTML = '';
+                document.querySelectorAll('.mood-chip').forEach(chip => chip.classList.remove('active'));
+                return;
+            }
+
+            const moodKeywords = {
+                spiritual: ['god', 'krishna', 'shiva', 'ganpati', 'temple', 'holy', 'devotion', 'pray', 'shrine', 'sacred', 'religion', 'spiritual', 'meditation', 'culture', 'peace'],
+                historic: ['fort', 'history', 'castle', 'king', 'ancient', 'palace', 'war', 'monument', 'ruins', 'historic', 'heritage', 'empire', 'maratha', 'wada'],
+                nature: ['tree', 'water', 'lake', 'mountain', 'hill', 'park', 'garden', 'green', 'peace', 'nature', 'scenic', 'dam', 'forest', 'relax', 'calm'],
+                city: ['mall', 'shopping', 'urban', 'market', 'cafe', 'nightlife', 'buildings', 'modern', 'city', 'food', 'vibes', 'party', 'europe', 'street']
+            };
+
+            let matchedPlaces = new Set();
+
+            for (const [mood, places] of Object.entries(moodDatabase)) {
+                let matchesCategory = mood.includes(query);
+                
+                // Advanced category matching by synonyms/keywords (if query is at least 3 chars)
+                if (!matchesCategory && query.length >= 3) {
+                    matchesCategory = moodKeywords[mood].some(kw => query.includes(kw) || kw.startsWith(query) || query.startsWith(kw));
+                }
+
+                places.forEach(p => {
+                    const titleMatch = p.title.toLowerCase().includes(query);
+                    const descMatch = p.desc.toLowerCase().includes(query);
+                    
+                    if (matchesCategory || titleMatch || descMatch) {
+                        matchedPlaces.add(p);
+                    }
+                });
+            }
+
+            // Sync visual active state of mood chips if they squarely match a category
+            document.querySelectorAll('.mood-chip').forEach(chip => chip.classList.remove('active'));
+            for (const mood of Object.keys(moodDatabase)) {
+                if (query.length >= 3 && (mood.includes(query) || moodKeywords[mood].some(kw => query.includes(kw) || kw.startsWith(query)))) {
+                    const chipToActivate = Array.from(document.querySelectorAll('.mood-chip'))
+                        .find(chip => chip.getAttribute('onclick').includes(mood));
+                    if (chipToActivate) chipToActivate.classList.add('active');
+                    break;
+                }
+            }
+
+            const results = Array.from(matchedPlaces);
+            renderMoodResults(results.slice(0, 8));
+        }
+
+        function renderMoodResults(places) {
+            const container = document.getElementById('mood-results');
+            if (places.length === 0) {
+                container.innerHTML = '<p style="color:#999; margin-top:20px; font-style: italic;">No exact matches found. Try another mood like "nature" or "historic"!</p>';
+                return;
+            }
+
+            container.innerHTML = places.map(place => `
+                <div class="mood-result-card" style="animation: fadeIn 0.5s ease;">
+                    <div class="mood-result-img" style="background-image: url('${place.img}')"></div>
+                    <div class="mood-result-content">
+                        <h4>${place.title}</h4>
+                        <p>${place.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize default mood on load
+        window.addEventListener('DOMContentLoaded', () => {
+            selectMood('spiritual', document.querySelector('.mood-chip'));
+        });
     </script>
+
+    <!-- Floating Chatbot Widget -->
+    <div class="chatbot-label" id="chatbot-label">💬 Ask me about Maharashtra!</div>
+
+    <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chatbot">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/>
+            <path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+        </svg>
+    </button>
+
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar">🏛️</div>
+                <div class="chatbot-header-text">
+                    <h4>Tourist Niketan AI</h4>
+                    <span>● Online — Ask me anything!</span>
+                </div>
+            </div>
+            <button class="chatbot-close" id="close-chatbot">&times;</button>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div class="chatbot-welcome" id="chatbot-welcome">
+            <div class="welcome-emoji">🙏</div>
+            <h3>Namaste!</h3>
+            <p>I'm your Maharashtra travel guide. Ask me about places, food, history, or plan your trip!</p>
+            <div class="chatbot-suggestions">
+                <button class="suggestion-chip" data-query="Best places to visit in Pune">📍 Best places in Pune</button>
+                <button class="suggestion-chip" data-query="Tell me about Shaniwar Wada">🏰 Shaniwar Wada</button>
+                <button class="suggestion-chip" data-query="Famous food in Maharashtra">🍛 Famous food</button>
+                <button class="suggestion-chip" data-query="Weekend getaways near Pune">🏞️ Weekend getaways</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div id="chat-display-area"></div>
+
+        <!-- Input Area -->
+        <div class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off">
+            <button id="chatbot-send" aria-label="Send message">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

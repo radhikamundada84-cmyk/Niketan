@@ -29,7 +29,7 @@
             <div class="right-panel">
 
                 <div class="login-section" id="login-container">
-                    <h2 class="welcome-text" id="auth-title" style="text-align: center;">कसं काय पुणेकर?</h2>
+                    <h2 class="welcome-text" id="auth-title" style="text-align: center;">कसं काय महाराष्ट्र?</h2>
                     <p class="login-subtitle" id="auth-subtitle">Login with Google</p>
 
                     <div id="google-btn-container" style="margin-bottom: 50px; min-height: 48px;"></div>
@@ -91,15 +91,23 @@
                 picture: data.picture
             };
             localStorage.setItem('sessionUser', JSON.stringify(user));
-            window.location.href = 'main.html';
+            window.location.href = 'user-info.html';
         }
 
         window.onload = function () {
-            // Check session
+            // Check if user has completed the FULL flow (login + user-info)
             const sessionData = localStorage.getItem('sessionUser');
-            if (sessionData) {
+            const infoCompleted = localStorage.getItem('userInfoCompleted');
+
+            if (sessionData && infoCompleted) {
+                // Returning user who finished everything → go to main
                 window.location.href = 'main.html';
+                return;
             }
+
+            // Clear any stale/incomplete session data so login page shows fresh
+            localStorage.removeItem('sessionUser');
+            localStorage.removeItem('userInfoCompleted');
 
             // Init Google Auth
             google.accounts.id.initialize({
