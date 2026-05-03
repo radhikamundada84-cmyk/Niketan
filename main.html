@@ -56,40 +56,43 @@
 
         /* Navigation Bar */
         .navbar {
-            padding: 20px 80px;
+            padding: 20px 40px;
             display: flex;
             align-items: center;
             width: 100%;
+            justify-content: space-between;
         }
 
         .nav-left {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 20px;
         }
 
         .navbar-brand {
             font-family: 'Playfair Display', serif;
-            font-size: 18px;
+            font-size: 24px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 20px;
         }
 
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
             opacity: 0.8;
             transition: opacity 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
@@ -105,8 +108,8 @@
         }
 
         #profile-pic {
-            width: 25px;
-            height: 25px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: 2px solid rgba(255, 255, 255, 0.8);
             object-fit: cover;
@@ -117,13 +120,14 @@
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 4px;
-            padding: 6px 15px;
-            font-weight: 400;
-            font-size: 10px;
+            padding: 8px 18px;
+            font-weight: 500;
+            font-size: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .logout-btn:hover {
@@ -2414,6 +2418,8 @@
             justify-content: center;
             padding: 30px 25px;
             text-align: center;
+            min-height: 0;
+            overflow-y: auto;
         }
 
         .chatbot-welcome .welcome-emoji {
@@ -3326,6 +3332,8 @@
                 const data = exploreData[i];
                 let className = 'carousel-item';
 
+                let clickAction = null;
+
                 if (i === currentExploreIndex) {
                     className += ' active';
                 } else {
@@ -3333,14 +3341,26 @@
                     const prevIdx = currentExploreIndex - 1 < cityStart ? cityEnd - 1 : currentExploreIndex - 1;
                     const nextIdx = currentExploreIndex + 1 >= cityEnd ? cityStart : currentExploreIndex + 1;
 
-                    if (i === prevIdx) className += ' prev';
-                    else if (i === nextIdx) className += ' next';
+                    if (i === prevIdx) {
+                        className += ' prev';
+                        clickAction = prevSlide;
+                    }
+                    else if (i === nextIdx) {
+                        className += ' next';
+                        clickAction = nextSlide;
+                    }
                     else className += ' hidden';
                 }
 
                 const el = document.createElement('div');
                 el.className = className;
                 el.style.backgroundImage = `url('${data.img}')`;
+                
+                if (clickAction) {
+                    el.onclick = clickAction;
+                    el.style.cursor = 'pointer';
+                }
+
                 el.innerHTML = `
                     <div class="carousel-info">
                         <h3>${data.title}</h3>
@@ -4384,6 +4404,32 @@
         });
     </script>
 
+    <!-- Footer Section -->
+    <footer style="background-color: #000; color: #fff; padding: 50px 20px; font-family: 'Poppins', sans-serif; position: relative; z-index: 10;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 20px; text-align: left;">
+            <p style="margin-bottom: 30px; font-size: 1.5rem; color: #eee; font-weight: 600;">Made with love by Team Byte forge ❤️</p>
+            
+            <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 100px; margin-bottom: 20px;">
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Contact us</span>
+                    <a href="tel:+919156834927" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#e2e8f0'">+91 9156834927</a>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <span style="font-weight: 700; color: #fff; font-size: 1.05rem;">Help & support</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="mailto:adi.agawane03@gmail.com" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#e2e8f0'">adi.agawane03@gmail.com</a>
+                        <a href="mailto:manishmhatre1502@gmail.com" style="color: #e2e8f0; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#e2e8f0'">manishmhatre1502@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; font-size: 0.8rem; color: #64748b; text-align: center;">
+                &copy; 2026 Tourist Niketan. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
     <!-- Floating Chatbot Widget -->
     <div class="chatbot-label" id="chatbot-label">💬 Ask me about India!</div>
 
@@ -4410,12 +4456,12 @@
         <div class="chatbot-welcome" id="chatbot-welcome">
             <div class="welcome-emoji">🙏</div>
             <h3>Namaste!</h3>
-            <p>I'm your Maharashtra travel guide. Ask me about places, food, history, or plan your trip!</p>
+            <p>I'm your India travel guide. Ask me about places, food, history, or plan your trip!</p>
             <div class="chatbot-suggestions">
-                <button class="suggestion-chip" data-query="Best places to visit in Pune">📍 Best places in Pune</button>
-                <button class="suggestion-chip" data-query="Tell me about Shaniwar Wada">🏰 Shaniwar Wada</button>
-                <button class="suggestion-chip" data-query="Famous food in Maharashtra">🍛 Famous food</button>
-                <button class="suggestion-chip" data-query="Weekend getaways near Pune">🏞️ Weekend getaways</button>
+                <button class="suggestion-chip" data-query="Best places to visit in India">📍 Best places in India</button>
+                <button class="suggestion-chip" data-query="Tell me about the Taj Mahal">🏰 Taj Mahal</button>
+                <button class="suggestion-chip" data-query="Famous food in India">🍛 Famous Indian food</button>
+                <button class="suggestion-chip" data-query="Top historical sites in India">🏞️ Top historical sites</button>
                  <button class="suggestion-chip" data-query="Contact number to get help from local people">📞 Contact number for help</button>
             </div>
         </div>
