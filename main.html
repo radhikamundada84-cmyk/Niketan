@@ -467,6 +467,39 @@
             margin-bottom: 20px;
         }
 
+        /* Mobile Optimization for Carousel */
+        @media (max-width: 768px) {
+            .carousel-track {
+                height: 50vh;
+            }
+            .carousel-item {
+                width: 85vw;
+                border-radius: 20px;
+            }
+            .carousel-item.prev {
+                transform: scale(0.85) translateX(-105%);
+            }
+            .carousel-item.next {
+                transform: scale(0.85) translateX(105%);
+            }
+            .carousel-info {
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+            }
+            .carousel-info h3 {
+                font-size: 22px;
+            }
+            .carousel-info p {
+                font-size: 12px;
+            }
+            .carousel-info .location-marker {
+                position: static;
+                margin-top: 10px;
+                font-size: 12px;
+            }
+        }
+
         .discover-more-btn {
             background-color: #ff0000;
             color: white;
