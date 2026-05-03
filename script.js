@@ -158,7 +158,7 @@ async function handleSendMessage(queryOverride = null) {
     } catch (error) {
         console.error('Chatbot API Error:', error);
         thinkingMessageElement.remove();
-        appendMessage("Unable to connect to the backend. Please check the connection and try again.", 'bot');
+        appendMessage("sorry judges our local pc is shuted down you can contact me to make it live so you can check the chat bot. my number - 9405495616", 'bot');
     }
 }
 
