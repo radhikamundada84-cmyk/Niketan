@@ -2584,6 +2584,71 @@
                 border-radius: 12px;
             }
         }
+
+        /* Comprehensive Mobile Optimization for Main Layout */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-left {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .user-nav {
+                margin-left: 0;
+            }
+            .hero-section {
+                padding: 40px 20px;
+                height: auto;
+                min-height: 50vh;
+                text-align: center;
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 48px;
+            }
+            .hero-subtitle {
+                margin: 0 auto;
+            }
+            .attractions-section, .mood-explorer-section, .regions-section {
+                padding: 40px 20px;
+            }
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .footer-column {
+                align-items: center;
+                text-align: center;
+            }
+            .mood-chips {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .mood-search-container {
+                width: 100%;
+                flex-direction: column;
+            }
+            #mood-search {
+                width: 100%;
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            .mood-search-btn {
+                width: 100%;
+                border-radius: 30px;
+                padding: 15px 35px;
+            }
+        }
     </style>
 </head>
 
