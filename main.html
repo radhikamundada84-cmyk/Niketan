@@ -38,7 +38,7 @@
             height: 100vh;
             z-index: -1;
             /* Updated to use the image you just uploaded! */
-            background-image: url('multimodal_bg.jpg');
+            background-image: url('assets/multimodal_bg.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -2560,8 +2560,8 @@
             <div class="navbar-brand">Tourist Niketan</div>
             <div class="nav-links">
                 <a href="#">Discover</a>
-                <a href="#">Maharashtra's History</a>
-                <a href="#">Events</a>
+                <a href="history.html">India's History</a>
+                <a href="#events-section">Events</a>
                 <a href="#">Publications</a>
             </div>
         </div>
@@ -2574,42 +2574,18 @@
 
     <div class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Discover<br>Maharashtra.</h1>
-            <p class="hero-subtitle">From timeless monuments to iconic landmarks, explore the history and culture behind
-                Maharashtra's greatest destinations.</p>
+            <h1 class="hero-title">Discover<br>India.</h1>
+            <p class="hero-subtitle">India isn’t just a place—it’s a feeling that stays with you long after the journey ends.</p>
         </div>
     </div>
 
     <section class="attractions-section">
         <div class="attractions-header">
-            <h2>MAHARASHTRA</h2>
+            <h2>INDIA</h2>
             <p>Where Every Journey Tells a Story</p>
         </div>
-        <div class="attractions-gallery">
-            <div class="attraction-card" style="background-image: url('slider5.jpg')">
-                <div class="card-inner-overlay">
-                    <h4>Pune</h4>
-                    <button class="explore-btn" onclick="openExploreModal(0)">Explore</button>
-                </div>
-            </div>
-            <div class="attraction-card" style="background-image: url('nashik_temple.jpg')">
-                <div class="card-inner-overlay">
-                    <h4>Nashik</h4>
-                    <button class="explore-btn" onclick="openExploreModal(7)">Explore</button>
-                </div>
-            </div>
-            <div class="attraction-card" style="background-image: url('mumbai.jpg')">
-                <div class="card-inner-overlay">
-                    <h4>Mumbai</h4>
-                    <button class="explore-btn" onclick="openExploreModal(14)">Explore</button>
-                </div>
-            </div>
-            <div class="attraction-card" style="background-image: url('kolhapur.png')">
-                <div class="card-inner-overlay">
-                    <h4>Kolhapur</h4>
-                    <button class="explore-btn" onclick="openExploreModal(21)">Explore</button>
-                </div>
-            </div>
+        <div class="attractions-gallery" id="states-gallery" style="overflow-x: auto; justify-content: flex-start; padding-bottom: 20px; scroll-snap-type: x mandatory;">
+            <!-- States will be populated dynamically via JavaScript -->
         </div>
     </section>
 
@@ -2643,50 +2619,58 @@
         <div class="regions-bg-banner"></div>
         <div class="regions-content">
             <div class="regions-header">
-                <h2>REGIONS OF MAHARASHTRA</h2>
+                <h2>REGIONS OF INDIA</h2>
                 <p>explore the diverse cultures</p>
             </div>
             
             <div class="regions-carousel-container">
                 <div class="regions-track" id="regionsTrack">
-                    <!-- Kokan -->
+                    <!-- Northern Zone -->
                     <div class="region-card">
-                        <div class="region-img" style="background-image: url('kokan_coast.png')"></div>
+                        <div class="region-img" style="background-image: url('assets/himachal_pradesh.jpg')"></div>
                         <div class="region-info">
-                            <div class="region-tag">Kokan</div>
-                            <div class="region-title">Coastal Beauty</div>
+                            <div class="region-tag">Northern Zone</div>
+                            <div class="region-title">Himalayan Majesty</div>
                         </div>
                     </div>
-                    <!-- Paschim Maharashtra -->
+                    <!-- Middle Zone -->
                     <div class="region-card">
-                        <div class="region-img" style="background-image: url('paschim_maharashtra.png')"></div>
+                        <div class="region-img" style="background-image: url('assets/madhya_pradesh.jpg')"></div>
                         <div class="region-info">
-                            <div class="region-tag">Paschim Maharashtra</div>
-                            <div class="region-title">Cultural Heartland</div>
+                            <div class="region-tag">Middle Zone</div>
+                            <div class="region-title">Heart of India</div>
                         </div>
                     </div>
-                    <!-- Marathwada -->
+                    <!-- Eastern Zone -->
                     <div class="region-card">
-                        <div class="region-img" style="background-image: url('ellora_caves.jpg')"></div>
+                        <div class="region-img" style="background-image: url('assets/west_bengal.jpg')"></div>
                         <div class="region-info">
-                            <div class="region-tag">Marathwada</div>
-                            <div class="region-title">Historical Legacy</div>
+                            <div class="region-tag">Eastern Zone</div>
+                            <div class="region-title">Cultural Heritage</div>
                         </div>
                     </div>
-                    <!-- Khandesh -->
+                    <!-- Northeastern Zone -->
                     <div class="region-card">
-                        <div class="region-img" style="background-image: url('historic_3.jpg')"></div>
+                        <div class="region-img" style="background-image: url('assets/meghalaya.png')"></div>
                         <div class="region-info">
-                            <div class="region-tag">Khandesh</div>
-                            <div class="region-title">Nature Reserve</div>
+                            <div class="region-tag">Northeastern Zone</div>
+                            <div class="region-title">The Seven Sisters</div>
                         </div>
                     </div>
-                    <!-- Vidarbha -->
+                    <!-- Southern Zone -->
                     <div class="region-card">
-                        <div class="region-img" style="background-image: url('vidarbha_temple.jpg')"></div>
+                        <div class="region-img" style="background-image: url('assets/kerala.jpg')"></div>
                         <div class="region-info">
-                            <div class="region-tag">Vidarbha</div>
-                            <div class="region-title">Spiritual Peace</div>
+                            <div class="region-tag">Southern Zone</div>
+                            <div class="region-title">Tropical Paradise</div>
+                        </div>
+                    </div>
+                    <!-- Western Zone -->
+                    <div class="region-card">
+                        <div class="region-img" style="background-image: url('assets/rajasthan.jpg')"></div>
+                        <div class="region-info">
+                            <div class="region-tag">Western Zone</div>
+                            <div class="region-title">Desert Royals</div>
                         </div>
                     </div>
                 </div>
@@ -2723,86 +2707,74 @@
 
             <div class="events-grid" id="festivals-grid">
                 <div class="event-card" data-status="previous">
-                    <div class="event-card-img" style="background-image: url('gudi_padwa.png')">
-                        <div class="event-date-badge">30 Mar</div>
+                    <div class="event-card-img" style="background-image: url('assets/diwali_maharashtra.png')">
+                        <div class="event-date-badge">Nov</div>
                         <div class="event-status-badge previous">Completed</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Gudi Padwa: Marathi New Year — A celebration of new beginnings</h4>
-                        <p>The Maharashtrian New Year celebrated with Gudis on every balcony, Puran Poli feasts, and Shobha Yatras.</p>
-                        <div class="event-card-location">📍 All of Maharashtra</div>
-                    </div>
-                </div>
-
-                <div class="event-card" data-status="previous">
-                    <div class="event-card-img" style="background-image: url('diwali_maharashtra.png')">
-                        <div class="event-date-badge">20-24 Oct</div>
-                        <div class="event-status-badge previous">Completed</div>
-                    </div>
-                    <div class="event-card-content">
-                        <h4>Diwali &amp; Diwali Padwa: The festival of lights, love and togetherness</h4>
-                        <p>Maharashtra celebrates with Abhyanga Snan, Padwa Bhaubeej, fort illuminations, and traditional faral sweets.</p>
-                        <div class="event-card-location">📍 All of Maharashtra</div>
+                        <h4>Diwali: The Festival of Lights</h4>
+                        <p>India's biggest and most important holiday of the year, celebrated with diyas, rangolis, and sweets.</p>
+                        <div class="event-card-location">📍 All Over India</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-status="ongoing">
-                    <div class="event-card-img" style="background-image: url('mogra_festival.png')">
-                        <div class="event-date-badge">Apr – May</div>
+                    <div class="event-card-img" style="background-image: url('assets/durga_puja.png')">
+                        <div class="event-date-badge">Oct</div>
                         <div class="event-status-badge ongoing">● Live Now</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Mogra Festival at Dagdusheth: Fragrant devotion in full bloom</h4>
-                        <p>Dagdusheth Ganpati Temple adorned with lakhs of fragrant mogra flowers, creating a divine atmosphere.</p>
-                        <div class="event-card-location">📍 Dagdusheth Temple, Pune</div>
+                        <h4>Durga Puja: The Grand Celebration</h4>
+                        <p>The streets of Kolkata turn into massive art galleries with pandals celebrating the Mother Goddess.</p>
+                        <div class="event-card-location">📍 West Bengal</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-status="ongoing">
-                    <div class="event-card-img" style="background-image: url('spiritual_2.jpg')">
-                        <div class="event-date-badge">6 Apr</div>
+                    <div class="event-card-img" style="background-image: url('assets/ganesh_chaturthi.png')">
+                        <div class="event-date-badge">Aug-Sep</div>
                         <div class="event-status-badge ongoing">● Live Now</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Ram Navami: Celebrating the birth of Lord Rama across temples</h4>
-                        <p>Grand celebrations at temples with Ram Janmotsav, kirtans, decorated pandals, and prasad distribution.</p>
-                        <div class="event-card-location">📍 Temples across Maharashtra</div>
+                        <h4>Ganesh Chaturthi</h4>
+                        <p>A spectacular 10-day festival featuring massive clay idols of Lord Ganesha and vibrant processions.</p>
+                        <div class="event-card-location">📍 Maharashtra</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-status="upcoming">
-                    <div class="event-card-img" style="background-image: url('pandharpur_wari.png')">
-                        <div class="event-date-badge">Jun – Jul</div>
+                    <div class="event-card-img" style="background-image: url('assets/hornbill_festival.png')">
+                        <div class="event-date-badge">Dec</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Pandharpur Wari: The sacred pilgrimage of Maharashtra's soul</h4>
-                        <p>Millions of Warkaris walk 250+ km from Dehu &amp; Alandi to Pandharpur. A spiritual journey like no other.</p>
-                        <div class="event-card-location">📍 Pune to Pandharpur</div>
+                        <h4>Hornbill Festival</h4>
+                        <p>Known as the 'Festival of Festivals', showcasing the rich culture, traditions, and music of Naga tribes.</p>
+                        <div class="event-card-location">📍 Nagaland</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-status="upcoming">
-                    <div class="event-card-img" style="background-image: url('ganesh_chaturthi.png')">
-                        <div class="event-date-badge">22 Aug</div>
+                    <div class="event-card-img" style="background-image: url('assets/onam_festival.png')">
+                        <div class="event-date-badge">Aug-Sep</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Ganesh Chaturthi: Maharashtra's grandest celebration of the year</h4>
-                        <p>The 10-day festival with thousands of Ganesh pandals, dhol-tasha processions, and iconic Visarjan.</p>
-                        <div class="event-card-location">📍 Pune &amp; Mumbai</div>
+                        <h4>Onam</h4>
+                        <p>The grand harvest festival of Kerala featuring snake boat races, traditional dances, and flower rangolis.</p>
+                        <div class="event-card-location">📍 Kerala</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-status="upcoming">
-                    <div class="event-card-img" style="background-image: url('navratri_maharashtra.png')">
-                        <div class="event-date-badge">2-11 Oct</div>
+                    <div class="event-card-img" style="background-image: url('assets/pushkar_fair.png')">
+                        <div class="event-date-badge">Nov</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Navratri &amp; Dandiya: Nine nights of dance, devotion and color</h4>
-                        <p>Maharashtra comes alive with Dandiya Raas, Garba nights, and grand Durga Puja celebrations.</p>
-                        <div class="event-card-location">📍 All of Maharashtra</div>
+                        <h4>Pushkar Camel Fair</h4>
+                        <p>An epic five-day camel and livestock fair blending traditional desert culture with vibrant festivities.</p>
+                        <div class="event-card-location">📍 Rajasthan</div>
                     </div>
                 </div>
             </div>
@@ -2812,125 +2784,219 @@
         <div class="events-panel" id="events-panel">
             <div class="events-sub-tabs">
                 <button class="event-sub-tab active" onclick="filterCityEvents('all', this)">All Events</button>
-                <button class="event-sub-tab" onclick="filterCityEvents('pune', this)">🏙️ Pune</button>
-                <button class="event-sub-tab" onclick="filterCityEvents('mumbai', this)">🌆 Mumbai</button>
-                <button class="event-sub-tab" onclick="filterCityEvents('other', this)">🌍 Other</button>
+                <button class="event-sub-tab" onclick="filterCityEvents('north', this)">🏔️ North</button>
+                <button class="event-sub-tab" onclick="filterCityEvents('south', this)">🌴 South</button>
+                <button class="event-sub-tab" onclick="filterCityEvents('other', this)">🌍 East & West</button>
             </div>
 
             <div class="events-grid" id="events-city-grid">
-                <!-- Pune Events -->
-                <div class="event-card" data-city="pune">
-                    <div class="event-card-img" style="background-image: url('mogra_festival.png')">
-                        <div class="event-date-badge">Apr – May</div>
+                <!-- North Events -->
+                <div class="event-card" data-city="north">
+                    <div class="event-card-img" style="background-image: url('assets/kumbh_mela.png')">
+                        <div class="event-date-badge">Jan-Feb</div>
                         <div class="event-status-badge ongoing">● Live Now</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Mogra Festival — Dagdusheth Ganpati Temple</h4>
-                        <p>The iconic temple decorated with lakhs of fragrant mogra flowers. A unique devotional experience exclusive to Pune.</p>
-                        <div class="event-card-location">📍 Budhwar Peth, Pune</div>
+                        <h4>Kumbh Mela</h4>
+                        <p>The largest peaceful gathering of pilgrims on earth, bathing in sacred rivers to wash away sins.</p>
+                        <div class="event-card-location">📍 Prayagraj, UP</div>
                     </div>
                 </div>
 
-                <div class="event-card" data-city="pune">
-                    <div class="event-card-img" style="background-image: url('ganesh_chaturthi.png')">
-                        <div class="event-date-badge">22 Aug</div>
+                <div class="event-card" data-city="north">
+                    <div class="event-card-img" style="background-image: url('assets/hemis_festival.png')">
+                        <div class="event-date-badge">Jun-Jul</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Pune Ganeshotsav — The 5 Manache Ganpati Procession</h4>
-                        <p>Dagdusheth, Kasba, Tambdi Jogeshwari, Guruji Talim &amp; Tulsi Baug — Pune's legendary 5 Ganpati mandals.</p>
-                        <div class="event-card-location">📍 Laxmi Road, Pune</div>
+                        <h4>Hemis Festival</h4>
+                        <p>A spectacular two-day monastic festival in Ladakh featuring masked dances by monks.</p>
+                        <div class="event-card-location">📍 Ladakh</div>
                     </div>
                 </div>
 
-                <div class="event-card" data-city="pune">
-                    <div class="event-card-img" style="background-image: url('historic_1.jpg')">
-                        <div class="event-date-badge">1 Jun</div>
+                <!-- South Events -->
+                <div class="event-card" data-city="south">
+                    <div class="event-card-img" style="background-image: url('assets/mysore_dasara.png')">
+                        <div class="event-date-badge">Oct</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Shivaji Maharaj Rajyabhishek Sohala — Coronation Day</h4>
-                        <p>Grand celebrations at Shaniwar Wada and forts commemorating the coronation of Chhatrapati Shivaji Maharaj.</p>
-                        <div class="event-card-location">📍 Shaniwar Wada, Pune</div>
+                        <h4>Mysore Dasara</h4>
+                        <p>A 10-day spectacular festival concluding with a grand elephant procession starting from Mysore Palace.</p>
+                        <div class="event-card-location">📍 Karnataka</div>
                     </div>
                 </div>
 
-                <!-- Mumbai Events -->
-                <div class="event-card" data-city="mumbai">
-                    <div class="event-card-img" style="background-image: url('ganesh_chaturthi.png')">
-                        <div class="event-date-badge">22 Aug</div>
-                        <div class="event-status-badge upcoming">Coming Soon</div>
-                    </div>
-                    <div class="event-card-content">
-                        <h4>Lalbaugcha Raja Darshan — Mumbai's King of Ganpati</h4>
-                        <p>The most visited Ganesh pandal in India. Millions queue for hours to seek blessings during the 10-day festival.</p>
-                        <div class="event-card-location">📍 Lalbaug, Mumbai</div>
-                    </div>
-                </div>
-
-                <div class="event-card" data-city="mumbai">
-                    <div class="event-card-img" style="background-image: url('navratri_maharashtra.png')">
-                        <div class="event-date-badge">2-11 Oct</div>
-                        <div class="event-status-badge upcoming">Coming Soon</div>
-                    </div>
-                    <div class="event-card-content">
-                        <h4>Falguni Pathak Dandiya Night — Mumbai's biggest Garba</h4>
-                        <p>The legendary Falguni Pathak performs live. Thousands dance through the night in colorful attire.</p>
-                        <div class="event-card-location">📍 NESCO, Goregaon, Mumbai</div>
-                    </div>
-                </div>
-
-                <div class="event-card" data-city="mumbai">
-                    <div class="event-card-img" style="background-image: url('city_1.jpg')">
-                        <div class="event-date-badge">26 Jan</div>
+                <div class="event-card" data-city="south">
+                    <div class="event-card-img" style="background-image: url('assets/pongal_festival.png')">
+                        <div class="event-date-badge">Jan</div>
                         <div class="event-status-badge previous">Completed</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Kala Ghoda Arts Festival — Mumbai's cultural extravaganza</h4>
-                        <p>A 9-day celebration of art, music, dance, theatre, and food in South Mumbai's iconic heritage precinct.</p>
-                        <div class="event-card-location">📍 Kala Ghoda, Mumbai</div>
+                        <h4>Pongal</h4>
+                        <p>A multi-day Tamil harvest festival celebrated with sweet rice, rangolis, and thanksgiving to nature.</p>
+                        <div class="event-card-location">📍 Tamil Nadu</div>
                     </div>
                 </div>
 
-                <!-- Other Events -->
+                <!-- East & West Events -->
                 <div class="event-card" data-city="other">
-                    <div class="event-card-img" style="background-image: url('pandharpur_wari.png')">
-                        <div class="event-date-badge">Jun – Jul</div>
+                    <div class="event-card-img" style="background-image: url('assets/rann_utsav.png')">
+                        <div class="event-date-badge">Nov-Feb</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Pandharpur Wari — Maharashtra's largest spiritual gathering</h4>
-                        <p>The Palkhi procession from Alandi &amp; Dehu through Saswad, Jejuri, and Wakhari to Pandharpur Temple.</p>
-                        <div class="event-card-location">📍 Pandharpur, Solapur</div>
+                        <h4>Rann Utsav</h4>
+                        <p>A vibrant carnival of music, dance, and culture on the breathtaking white salt desert of Kutch.</p>
+                        <div class="event-card-location">📍 Gujarat</div>
                     </div>
                 </div>
 
                 <div class="event-card" data-city="other">
-                    <div class="event-card-img" style="background-image: url('nashik_temple.jpg')">
-                        <div class="event-date-badge">Aug – Sep</div>
+                    <div class="event-card-img" style="background-image: url('assets/bihu_festival.png')">
+                        <div class="event-date-badge">Apr</div>
                         <div class="event-status-badge upcoming">Coming Soon</div>
                     </div>
                     <div class="event-card-content">
-                        <h4>Nashik Kumbh Mela Preparations — The sacred city readies</h4>
-                        <p>Nashik's Ramkund ghat and Trimbakeshwar begin preparations for the next Simhastha Kumbh Mela.</p>
-                        <div class="event-card-location">📍 Nashik, Maharashtra</div>
-                    </div>
-                </div>
-
-                <div class="event-card" data-city="other">
-                    <div class="event-card-img" style="background-image: url('ellora_caves.jpg')">
-                        <div class="event-date-badge">Jan – Feb</div>
-                        <div class="event-status-badge previous">Completed</div>
-                    </div>
-                    <div class="event-card-content">
-                        <h4>Ellora-Ajanta Festival — Aurangabad's cultural showcase</h4>
-                        <p>A grand festival of classical dance and music in the shadow of the UNESCO World Heritage Caves.</p>
-                        <div class="event-card-location">📍 Aurangabad, Maharashtra</div>
+                        <h4>Bihu Festival</h4>
+                        <p>The joyous harvest festival of Assam celebrated with traditional Bihu dances and feasts.</p>
+                        <div class="event-card-location">📍 Assam</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Trip Planner Section -->
+    <section class="trip-planner-section" id="trip-planner-section" style="padding: 60px 5%; background: linear-gradient(135deg, #f8f9fa 0%, #eef2f3 100%);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="events-header" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; color: #e53935; margin-bottom: 15px;">Plan Your Dream Trip 🧳</h2>
+                <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Search any place in India, select your budget, and get a realistic cost breakdown.</p>
+            </div>
+
+            <div class="trip-planner-card" style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; align-items: end;">
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="trip-from" style="font-weight: 600; color: #333; font-size: 0.95rem;">From Where? 📍</label>
+                        <input type="text" id="trip-from" placeholder="e.g. Mumbai, Delhi..." style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#e53935';" onblur="this.style.borderColor='#e0e0e0';">
+                    </div>
+
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="trip-destination" style="font-weight: 600; color: #333; font-size: 0.95rem;">Where to? 📍</label>
+                        <input type="text" id="trip-destination" placeholder="e.g. Goa, Kerala, Jaipur..." style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#e53935';" onblur="this.style.borderColor='#e0e0e0';">
+                    </div>
+                    
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="trip-transport" style="font-weight: 600; color: #333; font-size: 0.95rem;">Transport 🚆</label>
+                        <select id="trip-transport" style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; outline: none; background: white; cursor: pointer;" onfocus="this.style.borderColor='#e53935';" onblur="this.style.borderColor='#e0e0e0';">
+                            <option value="train" selected>Train</option>
+                            <option value="flight">Flight</option>
+                            <option value="bus">Bus</option>
+                            <option value="car">Car / Taxi</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="trip-budget" style="font-weight: 600; color: #333; font-size: 0.95rem;">Budget Category 💰</label>
+                        <select id="trip-budget" style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; outline: none; background: white; cursor: pointer;" onfocus="this.style.borderColor='#e53935';" onblur="this.style.borderColor='#e0e0e0';">
+                            <option value="economy">Backpacker (Economy)</option>
+                            <option value="standard" selected>Standard (Comfort)</option>
+                            <option value="luxury">Luxury (Premium)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label for="trip-days" style="font-weight: 600; color: #333; font-size: 0.95rem;">Duration (Days) 🗓️</label>
+                        <input type="number" id="trip-days" placeholder="e.g. 5" value="5" min="1" max="30" style="padding: 15px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; outline: none;" onfocus="this.style.borderColor='#e53935';" onblur="this.style.borderColor='#e0e0e0';">
+                    </div>
+
+                    <button onclick="generateTripPlan()" style="padding: 16px 24px; background: linear-gradient(135deg, #e53935, #b71c1c); color: white; border: none; border-radius: 12px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(229,57,53,0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(229,57,53,0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(229,57,53,0.3)';">
+                        Plan My Trip
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="trip-loading" style="display: none; text-align: center; padding: 40px;">
+                <div style="width: 50px; height: 50px; border: 4px solid #f3f3f3; border-top: 4px solid #e53935; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px;"></div>
+                <p style="color: #666; font-size: 1.1rem; font-weight: 500;">Crafting your perfect itinerary...</p>
+                <style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>
+            </div>
+
+            <!-- Results Section -->
+            <div id="trip-results" style="display: none; animation: fadeIn 0.5s ease-out;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                    
+                    <!-- Budget Breakdown -->
+                    <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="font-size: 1.5rem; color: #1a237e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">📊 Estimated Cost</h3>
+                        <div style="font-size: 2.5rem; font-weight: 700; color: #2e7d32; margin-bottom: 25px;" id="total-budget">₹0</div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="background:#e3f2fd; padding:6px; border-radius:8px;">✈️</span>
+                                    <div>
+                                        <span style="color: #555; font-weight: 500; display:block;">Transport</span>
+                                        <span id="rate-transport" style="font-size: 0.85rem; color: #888;"></span>
+                                    </div>
+                                </div>
+                                <strong id="cost-transport" style="font-size: 1.1rem; color: #333;">₹0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="background:#fff3e0; padding:6px; border-radius:8px;">🏨</span>
+                                    <div>
+                                        <span style="color: #555; font-weight: 500; display:block;">Stay</span>
+                                        <span id="rate-hotel" style="font-size: 0.85rem; color: #888;"></span>
+                                    </div>
+                                </div>
+                                <strong id="cost-hotel" style="font-size: 1.1rem; color: #333;">₹0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="background:#e8f5e9; padding:6px; border-radius:8px;">🍛</span>
+                                    <div>
+                                        <span style="color: #555; font-weight: 500; display:block;">Food</span>
+                                        <span id="rate-food" style="font-size: 0.85rem; color: #888;"></span>
+                                    </div>
+                                </div>
+                                <strong id="cost-food" style="font-size: 1.1rem; color: #333;">₹0</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="background:#fce4ec; padding:6px; border-radius:8px;">📸</span>
+                                    <div>
+                                        <span style="color: #555; font-weight: 500; display:block;">Sightseeing</span>
+                                        <span id="rate-misc" style="font-size: 0.85rem; color: #888;"></span>
+                                    </div>
+                                </div>
+                                <strong id="cost-misc" style="font-size: 1.1rem; color: #333;">₹0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Places to Stay -->
+                    <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="font-size: 1.5rem; color: #1a237e; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">🛏️ Best Places to Stay</h3>
+                        
+                        <div id="hotel-list" style="display: flex; flex-direction: column; gap: 15px;">
+                            <!-- Hotels injected via JS -->
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background: #fff3e0; border-radius: 12px; border-left: 4px solid #ff9800; display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size:1.5rem;">💡</span>
+                            <p style="margin: 0; font-size: 0.9rem; color: #e65100; font-weight: 500;">Book at least 3 weeks in advance for these rates!</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Event Detail Popup -->
     <div class="event-detail-overlay" id="event-detail-overlay" onclick="closeEventPopup(event)">
@@ -2984,6 +3050,18 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
                     Scan for Hidden Gem
                 </button>
+                <button class="hidden-gem-btn" id="bluetooth-secret-btn" style="display: none; background: linear-gradient(135deg, #1e3a8a, #312e81); border-color: #4f46e5;" onclick="connectToSecretESP32()">
+                    <svg viewBox="0 0 24 24"><path d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/></svg>
+                    Explore Hidden Secret
+                </button>
+                
+                <div id="secret-3d-container" style="display: none; margin-top: 25px; text-align: center; background: #1e293b; border-radius: 15px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #334155;">
+                    <h3 style="color: #60a5fa; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z"/></svg> Secret Unlocked!
+                    </h3>
+                    <p id="secret-text" style="color: #cbd5e1; margin-bottom: 20px; font-style: italic; line-height: 1.6;"></p>
+                    <model-viewer src="assets/great_Budha_Statue.glb" auto-rotate camera-controls style="width: 100%; height: 350px; background-color: #0f172a; border-radius: 10px; box-shadow: inset 0 0 15px rgba(0,0,0,0.8);"></model-viewer>
+                </div>
             </div>
             <div class="detail-sidebar">
                 <div class="detail-map" id="detail-map-container">
@@ -3011,6 +3089,48 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Local Insights Section -->
+        <div class="local-insights-section" style="margin: 2rem 0; padding: 0 1.5rem;">
+            <h3 style="font-size: 1.4rem; color: #1a237e; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.6rem;">✨</span> Local Insights
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
+                <!-- Famous Food Card -->
+                <div style="background: linear-gradient(145deg, #ffffff, #fdf8f5); border: 1px solid #ffe0b2; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(230,81,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; display: flex; flex-direction: column;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(230,81,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(230,81,0,0.05)';">
+                    <img id="insight-food-img" src="assets/default_food.png" alt="Famous Food" style="width: 100%; height: 160px; object-fit: cover; border-bottom: 1px solid #ffe0b2;">
+                    <div style="padding: 15px 20px; flex-grow: 1; display: flex; flex-direction: column;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                            <span style="font-size: 1.2rem;">🍽️</span>
+                            <h4 style="font-size: 1.15rem; color: #e65100; margin: 0; font-weight: 600;">Famous Food</h4>
+                        </div>
+                        <p id="insight-food" style="color: #555; font-size: 0.95rem; line-height: 1.5; margin: 0; font-weight: 500;"></p>
+                    </div>
+                </div>
+
+                <!-- Local Guide Card -->
+                <div style="background: linear-gradient(145deg, #ffffff, #f0f8ff); border: 1px solid #bbdefb; border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px rgba(25,118,210,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(25,118,210,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(25,118,210,0.05)';">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <img src="https://ui-avatars.com/api/?name=Local+Guide&background=1976D2&color=fff&rounded=true" alt="Localite" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <div>
+                                <h4 style="font-size: 1.1rem; color: #1565c0; margin: 0; font-weight: 600;">Local Guide Info</h4>
+                                <div style="font-size: 0.8rem; color: #00897b; font-weight: 500; display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+                                    <span style="display:inline-block; width:6px; height:6px; background:#00c853; border-radius:50%;"></span> Verified Local
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="insight-localite" style="color: #555; font-size: 0.9rem; line-height: 1.5; margin-bottom: 12px;"></p>
+                    <div style="background: #e3f2fd; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between;">
+                        <span style="color: #1976d2; font-size: 0.85rem; font-weight: 600;">Contact For Help:</span>
+                        <a id="insight-contact" href="#" style="color: #1565c0; font-weight: 700; text-decoration: none; font-size: 0.9rem; background: white; padding: 4px 8px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"></a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -3081,7 +3201,7 @@
                 <h3>✅ Beacon Detected — Welcome to Raigad Fort!</h3>
                 <div class="scanner-3d-container" id="fort-view">
                     <model-viewer 
-                        src="raigad_fort.glb" 
+                        src="assets/raigad_fort.glb" 
                         alt="Raigad Fort 3D Model" 
                         auto-rotate 
                         camera-controls 
@@ -3112,6 +3232,46 @@
 
             const user = JSON.parse(sessionData);
             document.getElementById('profile-pic').src = user.picture;
+
+            // Populate all states of India
+            const statesOfIndia = [
+                "Bihar", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Chhattisgarh",
+                "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+                "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+                "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana",
+                "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+            ];
+            
+            const images = [
+                'assets/bihar.jpg', 'assets/andhra_pradesh.png', 'assets/arunachal_pradesh.png', 'assets/assam.jpg', 'assets/chhattisgarh.jpg',
+                'assets/goa.png', 'assets/gujarat.jpg', 'assets/haryana.jpg', 'assets/himachal_pradesh.jpg', 'assets/jharkhand.jpg',
+                'assets/karnataka.jpg', 'assets/kerala.jpg', 'assets/madhya_pradesh.jpg', 'assets/maharashtra.png', 'assets/manipur.png',
+                'assets/meghalaya.png', 'assets/mizoram.jpg', 'assets/nagaland.jpg', 'assets/odisha.jpg', 'assets/punjab.png',
+                'assets/rajasthan.jpg', 'assets/sikkim.jpg', 'assets/tamil_nadu.jpg', 'assets/telangana.png', 'assets/tripura.jpg',
+                'assets/uttar_pradesh.png', 'assets/uttarakhand.jpg', 'assets/west_bengal.jpg'
+            ];
+
+            const gallery = document.getElementById('states-gallery');
+            if(gallery) {
+                statesOfIndia.forEach((state, index) => {
+                    const img = images[index % images.length];
+                    const modalIndices = [0, 5, 10, 15];
+                    const modalIndex = modalIndices[index % 4];
+                    
+                    const card = document.createElement('div');
+                    card.className = 'attraction-card';
+                    card.style.backgroundImage = `url('${img}')`;
+                    card.style.flexShrink = '0';
+                    card.style.scrollSnapAlign = 'start';
+                    card.innerHTML = `
+                        <div class="card-inner-overlay">
+                            <h4>${state}</h4>
+                            <button class="explore-btn" onclick="openExploreModal(${modalIndex})">Explore</button>
+                        </div>
+                    `;
+                    gallery.appendChild(card);
+                });
+            }
         }
 
         // Logout Event
@@ -3128,10 +3288,10 @@
 
         function openExploreModal(index) {
             // Determine city range based on starting index
-            if (index >= 0 && index < 7) { cityStart = 0; cityEnd = 7; }
-            else if (index >= 7 && index < 14) { cityStart = 7; cityEnd = 14; }
-            else if (index >= 14 && index < 21) { cityStart = 14; cityEnd = 21; }
-            else if (index >= 21 && index < 28) { cityStart = 21; cityEnd = 28; }
+            if (index >= 0 && index < 5) { cityStart = 0; cityEnd = 5; }
+            else if (index >= 5 && index < 10) { cityStart = 5; cityEnd = 10; }
+            else if (index >= 10 && index < 15) { cityStart = 10; cityEnd = 15; }
+            else if (index >= 15 && index < 22) { cityStart = 15; cityEnd = 22; }
 
             currentExploreIndex = index;
             document.getElementById('explore-modal').style.display = 'flex';
@@ -3193,371 +3353,359 @@
         }
         const exploreData = [
             {
-                title: "Dagdusheth Ganpati Temple",
-                subtitle: "Pune's most beloved Ganpati temple",
-                location: "Pune, Maharashtra",
-                img: "slider5.jpg",
-                description: "The Dagdusheth Halwai Ganapati Temple is one of the most famous and richest temples in Pune, dedicated to Lord Ganesha. Built in 1893 by Dagdusheth Halwai, a sweetmeat seller, the temple was constructed in memory of his young son who died of plague. The idol is adorned with nearly 40 kg of gold ornaments, making it a stunning sight for devotees and visitors alike.\n\nThe temple is centrally located near Shaniwar Wada and is visited by thousands of devotees daily. During the Ganesh Chaturthi festival, the temple becomes the epicenter of celebrations in Pune, attracting lakhs of visitors from across India.",
-                lat: 18.5163,
-                lng: 73.8567,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Pune Junction Railway Station",
-                bestTime: "September – February",
-                temp: "22 – 34°C"
-            },
-            {
-                title: "Sarasbaug",
-                subtitle: "A peaceful garden with a famous Ganpati temple",
-                location: "Pune, Maharashtra",
-                img: "nashik.jpg",
-                description: "Sarasbaug is one of the oldest and most popular gardens in Pune, originally built by the Peshwa rulers. The garden is home to the famous Talyatla Ganpati, a revered Ganesha idol placed in the center of a small pond. The park spans a vast area with well-maintained lawns, jogging tracks, and play areas.\n\nSarasbaug is a favorite among locals for morning walks, yoga sessions, and family outings. The serene atmosphere, combined with the historical Ganpati temple, makes it a perfect blend of nature, peace, and spirituality in the heart of the city.",
-                lat: 18.5003,
-                lng: 73.8567,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Swargate Bus Stand / Pune Junction",
+                title: "Mahabodhi Temple, Bodh Gaya",
+                subtitle: "A UNESCO World Heritage Site",
+                location: "Bodh Gaya, Bihar",
+                img: "assets/bodhgaya_modal.jpg",
+                description: "Bodh Gaya is one of the most important and sacred Buddhist pilgrimage centers in the world. It was here, under the Bodhi Tree, that Siddhartha Gautama attained enlightenment and became the Buddha. The magnificent Mahabodhi Temple complex, a UNESCO World Heritage site, is the spiritual heart of Bodh Gaya, featuring ancient brick architecture and a serene ambiance.",
+                lat: 24.6959,
+                lng: 84.9914,
+                airport: "Gaya Airport (GAY)",
+                railway: "Gaya Junction",
                 bestTime: "October – March",
-                temp: "20 – 32°C"
+                temp: "15 – 28°C",
+                famousFood: "Litti Chokha, Khaja, Sattu Drink",
+                localiteInfo: "Bodh Gaya locals are very welcoming. Many are Buddhist monks or scholars who can guide you through the temple rituals and history.",
+                localiteNumber: "+91 98765-43210 (Rajiv - Local Guide)"
             },
             {
-                title: "Shaniwar Wada",
-                subtitle: "A symbol of Pune's history and Maratha legacy",
-                location: "Pune, Maharashtra",
-                img: "shaniwar_modal.jpg",
-                description: "Shaniwar Wada is a majestic historical fortification in the heart of Pune, built in 1732 by Bajirao I of the Peshwa dynasty. It served as the seat of the Peshwa rulers of the Maratha Empire until 1818. The fort was largely destroyed in a fire in 1828, but the massive walls, grand gateway, and the lotus-shaped fountain still stand as a proud testament to Maratha architecture.\n\nThe fort hosts a mesmerizing Sound and Light Show every evening that narrates the story of the Peshwas and the glorious Maratha Empire. Walking through its ruins, one can almost feel the echoes of a powerful empire that once ruled much of India.",
-                lat: 18.5196,
-                lng: 73.8553,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Pune Junction Railway Station",
-                bestTime: "October – February",
-                temp: "18 – 30°C"
-            },
-            {
-                title: "Friendship Garden",
-                subtitle: "A beautiful garden inspired by Japanese design",
-                location: "Pune, Maharashtra",
-                img: "sarasbaug_park.png",
-                description: "The Pune-Okayama Friendship Garden, commonly known as Friendship Garden, is a Japanese-inspired garden established in 2007 to celebrate the sister-city relationship between Pune and Okayama, Japan. Spanning 10 acres, the garden features a beautiful bamboo grove, stone lanterns, a zen rock garden, and a serene koi fish pond.\n\nThe garden offers a unique escape from the bustling city, with winding pathways through manicured landscapes that evoke the tranquility of traditional Japanese gardens. It is one of the largest gardens of its kind in India and a favorite spot for photography, meditation, and peaceful strolls.",
-                lat: 18.5365,
-                lng: 73.8260,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Shivajinagar Railway Station",
-                bestTime: "August – January",
-                temp: "20 – 33°C"
-            },
-            {
-                title: "Streets Of Europe",
-                subtitle: "European-style architecture and vibrant vibes",
-                location: "Pune, Maharashtra",
-                img: "slider1.jpg",
-                description: "Streets of Europe is a unique commercial and entertainment destination in Pune that recreates the charm of European boulevards right in the heart of India. Featuring stunning European-style facades, cobblestone-inspired pathways, and vibrant outdoor cafes, this destination offers a one-of-a-kind experience.\n\nVisitors can enjoy a variety of international cuisines, boutique shopping, and live entertainment amidst architecture inspired by the streets of Paris, Venice, and Barcelona. The vibrant atmosphere, colorful buildings, and Instagram-worthy corners make it a must-visit spot for food lovers and photography enthusiasts.",
-                lat: 18.5617,
-                lng: 73.9168,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Hadapsar Railway Station",
-                bestTime: "Year-round",
-                temp: "22 – 35°C"
-            },
-            {
-                title: "Sky Walk",
-                subtitle: "A perfect spot to enjoy city views from above",
-                location: "Pune, Maharashtra",
-                img: "slider3.png",
-                description: "The Sky Walk near Pune offers a breathtaking aerial experience where visitors can walk on a glass-floor bridge suspended high above the ground. This thrilling attraction provides panoramic views of the surrounding Sahyadri mountains, lush green valleys, and the winding rivers below.\n\nIdeal for adventure seekers and nature lovers alike, the Sky Walk combines the excitement of height with the beauty of Maharashtra's Western Ghats. The transparent glass walkway creates a sensation of walking on air, making it an unforgettable experience for visitors of all ages.",
-                lat: 18.6165,
-                lng: 73.7574,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Lonavala Railway Station",
+                title: "Vishnupad Temple",
+                subtitle: "An ancient temple dedicated to Lord Vishnu",
+                location: "Gaya, Bihar",
+                img: "assets/vishnupad.png",
+                description: "The Vishnupad Temple, located along the Falgu River, is a revered Hindu temple dedicated to Lord Vishnu. The temple marks the spot where Lord Vishnu is believed to have placed his foot to subdue the demon Gayasur. The footprint is stamped on a solid rock known as Dharmasila and is a major site for the Pind Daan rituals performed by Hindus.",
+                lat: 24.7833,
+                lng: 85.0167,
+                airport: "Gaya Airport (GAY)",
+                railway: "Gaya Junction",
                 bestTime: "October – March",
-                temp: "18 – 28°C"
+                temp: "15 – 30°C",
+                famousFood: "Tilkut, Anarsa, Sattu Paratha",
+                localiteInfo: "Local pandits here specialize in assisting with the Pind Daan ceremonies by the Falgu river.",
+                localiteNumber: "+91 87654-32109 (Pandit Sharma)"
             },
             {
-                title: "Pataleshwar Cave Temple",
-                subtitle: "An ancient rock-cut cave temple dedicated to Lord Shiva",
-                location: "Pune, Maharashtra",
-                img: "cave_modal.jpg",
-                description: "The Pataleshwar Cave Temple is an ancient rock-cut temple dating back to the 8th century, carved entirely out of a single basalt rock. Dedicated to Lord Shiva (Pataleshwar — Lord of the Underworld), this temple is a remarkable example of early Indian rock-cut architecture, similar to the famous Elephanta Caves.\n\nLocated in the heart of Pune on Jangli Maharaj Road, the temple features a Nandi mandapa (hall), a circular sanctum with a Shivalinga, and beautiful stone carvings. Despite being an incomplete excavation, it stands as one of Pune's most important heritage sites and a peaceful retreat in the middle of the city's chaos.",
-                lat: 18.5214,
-                lng: 73.8429,
-                airport: "Pune International Airport (PNQ)",
-                railway: "Shivajinagar Railway Station",
-                bestTime: "October – February",
-                temp: "20 – 32°C"
+                title: "Jim Corbett National Park",
+                subtitle: "India's oldest national park",
+                location: "Uttarakhand (Featured in Bihar List)",
+                img: "assets/jim_corbett.jpg",
+                description: "Though located in Uttarakhand, Jim Corbett National Park is one of India's most famous wildlife sanctuaries. Established in 1936 to protect the endangered Bengal tiger, it offers breathtaking landscapes, dense forests, and diverse wildlife including elephants, leopards, and over 600 species of birds. It provides a thrilling safari experience for nature lovers.",
+                lat: 29.5300,
+                lng: 78.7747,
+                airport: "Pantnagar Airport",
+                railway: "Ramnagar Railway Station",
+                bestTime: "November – June",
+                temp: "15 – 40°C",
+                famousFood: "Kumaoni Thali, Bhatt ki Churkani",
+                localiteInfo: "The local guides are expert trackers who can help spot tigers and identify bird calls during your safari.",
+                localiteNumber: "+91 76543-21098 (Ramesh - Safari Guide)"
+            },
+            {
+                title: "Rajdhani Vatika (Eco Park)",
+                subtitle: "A massive, beautifully landscaped park",
+                location: "Patna, Bihar",
+                img: "assets/rajdhani_vatika.png",
+                description: "Rajdhani Vatika, also known as Eco Park, is a large green space in Patna designed to provide a refreshing escape from city life. It features beautiful lakes with boating facilities, jogging tracks, children's play areas, and lush green gardens. The park is a popular evening hangout spot for families and nature enthusiasts.",
+                lat: 25.6022,
+                lng: 85.1118,
+                airport: "Jay Prakash Narayan Airport (PAT)",
+                railway: "Patna Junction",
+                bestTime: "September – March",
+                temp: "20 – 35°C",
+                famousFood: "Bihari Kebab, Sattu Sharbat, Malpua",
+                localiteInfo: "Friendly park staff are available to help with boating tickets and direct you to the best picnic spots.",
+                localiteNumber: "+91 99887-76655 (Park Information)"
+            },
+            {
+                title: "Great Buddha Statue",
+                subtitle: "A towering 80-foot statue of Lord Buddha",
+                location: "Bodh Gaya, Bihar",
+                img: "assets/great_buddha.png",
+                description: "The Great Buddha Statue is one of the most striking landmarks in Bodh Gaya. Standing 80 feet tall, the statue depicts the Buddha in a meditation posture sitting on a lotus. Unveiled by the Dalai Lama in 1989, it took seven years to build using red granite and sandstone blocks. It is surrounded by smaller statues of Buddha's ten prominent disciples.",
+                lat: 24.6976,
+                lng: 84.9870,
+                airport: "Gaya Airport (GAY)",
+                railway: "Gaya Junction",
+                bestTime: "October – March",
+                temp: "15 – 28°C",
+                famousFood: "Lai, Thekua, Makhana Snacks",
+                localiteInfo: "Local volunteers often offer free guided tours explaining the significance of the Buddha's ten disciples.",
+                localiteNumber: "+91 98989-89898 (Temple Trust Desk)"
             },
             // ─── Nashik Places (index 7-9) ───
             {
-                title: "Trimbakeshwar Temple",
-                subtitle: "One of the 12 Jyotirlingas of Lord Shiva",
-                location: "Nashik, Maharashtra",
-                img: "trimbakeshwar.jpg",
-                description: "Trimbakeshwar Temple is one of the twelve sacred Jyotirlinga shrines dedicated to Lord Shiva, located at the source of the Godavari river near the Brahmagiri mountain. The temple was built by Peshwa Balaji Baji Rao (Nana Saheb) in the 18th century using black stone.\n\nUnlike other Jyotirlingas, the lingam here has three faces representing Brahma, Vishnu, and Shiva. The temple is surrounded by sacred kunds (water tanks) and is a major pilgrimage destination during the Kumbh Mela, which is held here every 12 years.",
-                lat: 19.9322,
-                lng: 73.5311,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
-                bestTime: "October – March",
-                temp: "18 – 35°C"
-            },
-            {
-                title: "Sula Vineyards",
-                subtitle: "India's most famous wine destination",
-                location: "Nashik, Maharashtra",
-                img: "sula_vineyards.jpg",
-                description: "Sula Vineyards is India's leading wine brand and its vineyard in Nashik is a stunning destination set against the backdrop of the Sahyadri mountains. Founded in 1999 by Rajeev Samant, Sula pioneered the Indian wine revolution.\n\nVisitors can enjoy guided vineyard tours, wine tasting sessions, and gourmet meals at The Source restaurant. The annual SulaFest music and wine festival attracts thousands. The sunset views from the tasting room are spectacular, making it one of the most Instagrammed spots in Maharashtra.",
-                lat: 20.0063,
-                lng: 73.6767,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
+                title: "Tirumala Venkateswara Temple",
+                subtitle: "One of the richest and most visited pilgrimage centers",
+                location: "Tirupati, Andhra Pradesh",
+                img: "assets/tirumala.jpg",
+                description: "The Tirumala Venkateswara Temple is a landmark Vaishnavite temple situated in the hill town of Tirumala at Tirupati. Dedicated to Lord Sri Venkateswara, an incarnation of Vishnu, it is one of the most revered and heavily visited places of worship in the world. The temple features stunning Dravidian architecture with its famous gold-plated Ananda Nilayam vimana.",
+                lat: 13.6833,
+                lng: 79.3500,
+                airport: "Tirupati Airport (TIR)",
+                railway: "Tirupati Main Railway Station",
                 bestTime: "September – March",
-                temp: "20 – 32°C"
+                temp: "15 – 35°C",
+                famousFood: "Tirupati Laddu, Pulihora, Dosa",
+                localiteInfo: "Local vendors sell authentic prasadam and puja items. Be cautious of touts and rely on official TTD guides.",
+                localiteNumber: "+91 88888-88888 (TTD Helpdesk)"
             },
             {
-                title: "Pandavleni Caves",
-                subtitle: "Ancient Buddhist rock-cut caves dating to 1st century BCE",
-                location: "Nashik, Maharashtra",
-                img: "pandavleni_caves.jpg",
-                description: "The Pandavleni Caves, also known as Trirashmi Caves, are a group of 24 Buddhist caves carved out of basalt rock between the 1st century BCE and 3rd century CE. These caves served as viharas (monasteries) and chaityas (prayer halls) for Buddhist monks.\n\nThe caves feature intricate carvings, inscriptions in Brahmi script, and stunning views of Nashik city from the hilltop. Cave 3 is the most impressive with detailed carvings of Buddha, and Cave 18 has an elegant chaitya hall. The 500-step climb is rewarded with panoramic views.",
-                lat: 19.9700,
-                lng: 73.7600,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
-                bestTime: "October – February",
-                temp: "18 – 30°C"
-            },
-            {
-                title: "Ramkund",
-                subtitle: "The sacred bathing ghat on the banks of Godavari",
-                location: "Nashik, Maharashtra",
-                img: "ramkund.png",
-                description: "Ramkund is a sacred bathing ghat on the banks of the Godavari river in the heart of Nashik. According to Hindu mythology, Lord Rama bathed here during his 14-year exile. The kund is considered one of the most important pilgrimage sites in India.\n\nDuring the Kumbh Mela, millions of devotees take a holy dip in Ramkund. The ghat is lined with temples and the evening aarti ceremony creates a mesmerizing spiritual atmosphere. Immersion of ashes of the deceased is also performed here, making it one of the most sacred ghats in the country.",
-                lat: 20.0000,
-                lng: 73.7900,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
+                title: "Kailasagiri",
+                subtitle: "A scenic hilltop park with giant Shiva-Parvati statues",
+                location: "Visakhapatnam, Andhra Pradesh",
+                img: "assets/kailasgiri.jpg",
+                description: "Kailasagiri is a beautiful hilltop park in Visakhapatnam that offers panoramic views of the city and the Bay of Bengal. It is famous for its 40-foot tall white statues of Lord Shiva and Goddess Parvati. Visitors can enjoy a ropeway ride, stroll through floral gardens, and experience a peaceful atmosphere overlooking the ocean.",
+                lat: 17.7490,
+                lng: 83.3424,
+                airport: "Visakhapatnam Airport (VTZ)",
+                railway: "Visakhapatnam Junction",
                 bestTime: "October – March",
-                temp: "18 – 33°C"
+                temp: "18 – 32°C",
+                famousFood: "Bamboo Chicken, Putharekulu, Seafood",
+                localiteInfo: "The ropeway staff and local photographers are very friendly and can help you get the best shots of the city.",
+                localiteNumber: "+91 77777-77777 (Kailasagiri Tourist Desk)"
             },
             {
-                title: "Anjneri Hill",
-                subtitle: "The legendary birthplace of Lord Hanuman",
-                location: "Nashik, Maharashtra",
-                img: "anjneri_hill.png",
-                description: "Anjneri Hill is a sacred mountain believed to be the birthplace of Lord Hanuman. Located about 25 km from Nashik, the hill rises to 4,264 feet and offers a challenging yet rewarding trek through lush green forests and rocky terrain.\n\nThe summit features an ancient temple dedicated to Goddess Anjani (Hanuman's mother), rock-cut water cisterns, and breathtaking 360-degree views of the Sahyadri range. During the monsoon, the hill is surrounded by clouds, creating an otherworldly experience. The trek is popular among adventure enthusiasts and pilgrims alike.",
-                lat: 19.9300,
-                lng: 73.5500,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
-                bestTime: "October – February",
-                temp: "16 – 28°C"
+                title: "Shri Padmavathi Ammavari Temple",
+                subtitle: "The divine consort of Lord Venkateswara",
+                location: "Tirupati, Andhra Pradesh",
+                img: "assets/padmavati.jpg",
+                description: "Located in Tiruchanur near Tirupati, the Shri Padmavathi Ammavari Temple is dedicated to Goddess Padmavathi, the consort of Lord Venkateswara. Tradition dictates that pilgrims should visit this temple before heading to the Tirumala temple. The architecture is exquisite, drawing countless devotees seeking blessings.",
+                lat: 13.6062,
+                lng: 79.4315,
+                airport: "Tirupati Airport (TIR)",
+                railway: "Tirupati Main Railway Station",
+                bestTime: "September – March",
+                temp: "15 – 35°C",
+                famousFood: "Temple Prasadam, South Indian Thali",
+                localiteInfo: "Local priests can guide you through the specific rituals dedicated to Goddess Padmavathi.",
+                localiteNumber: "+91 99999-99999 (Temple Enquiry)"
             },
             {
-                title: "Coin Museum",
-                subtitle: "India's first museum dedicated to numismatics",
-                location: "Nashik, Maharashtra",
-                img: "coin_museum.png",
-                description: "The Indian Institute of Research in Numismatic Studies (IIRNS) Coin Museum in Nashik is one of the finest numismatic museums in Asia. It houses over 65,000 coins spanning 2,500 years of Indian history — from the punch-marked coins of the Mauryas to modern Indian currency.\n\nThe museum features rare gold coins of the Gupta dynasty, Mughal silver rupees, and British-era coinage. Interactive displays explain the evolution of trade and currency in the subcontinent. It's a hidden gem that history buffs absolutely love.",
-                lat: 19.9800,
-                lng: 73.7200,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
-                bestTime: "Year-round",
-                temp: "20 – 35°C"
+                title: "Araku Valley",
+                subtitle: "A lush, mist-covered hill station",
+                location: "Visakhapatnam District, Andhra Pradesh",
+                img: "assets/araku.jpg",
+                description: "Araku Valley is a stunning hill station in the Eastern Ghats, famous for its lush green valleys, aromatic coffee plantations, and mist-covered landscapes. The scenic train ride to Araku through numerous tunnels and waterfalls is an experience in itself. It is also home to several indigenous tribes and the fascinating Borra Caves.",
+                lat: 18.3333,
+                lng: 82.8667,
+                airport: "Visakhapatnam Airport (VTZ)",
+                railway: "Araku Railway Station",
+                bestTime: "September – February",
+                temp: "10 – 25°C",
+                famousFood: "Araku Coffee, Bamboo Chicken (Bongu Kodi)",
+                localiteInfo: "Local tribal communities run coffee museums and offer insights into their traditional lifestyle and coffee making.",
+                localiteNumber: "+91 66666-66666 (Araku Tourism Office)"
             },
             {
-                title: "Dugarwadi Waterfall",
-                subtitle: "A stunning monsoon waterfall hidden in the Sahyadris",
-                location: "Nashik, Maharashtra",
-                img: "dugarwadi_waterfall.png",
-                description: "Dugarwadi Waterfall is a magnificent 15-meter cascade located about 30 km from Nashik, nestled deep in the Western Ghats. During the monsoon season (July–September), the waterfall transforms into a roaring torrent surrounded by emerald green forests.\n\nThe approach through winding village roads and terraced farms is scenic in itself. Local villagers have set up small eateries serving hot bhajias and chai. The waterfall pool at the base is perfect for wading. It remains one of Nashik's best-kept natural secrets.",
-                lat: 19.8800,
-                lng: 73.6200,
-                airport: "Nashik Ozar Airport",
-                railway: "Nashik Road Railway Station",
-                bestTime: "July – October",
-                temp: "18 – 28°C"
+                title: "Gandikota Fort",
+                subtitle: "The Grand Canyon of India",
+                location: "Kadapa, Andhra Pradesh",
+                img: "assets/gandikota.jpg",
+                description: "Gandikota is a small village known for its spectacular gorge formed by the Pennar River cutting through the Erramala hills, famously known as the 'Grand Canyon of India'. The 13th-century Gandikota Fort, built in red sandstone, sits right on the edge of the gorge and offers breathtaking views, especially during sunrise and sunset.",
+                lat: 14.8167,
+                lng: 78.2833,
+                airport: "Kadapa Airport (CDP)",
+                railway: "Muddanuru Railway Station",
+                bestTime: "September – February",
+                temp: "20 – 30°C",
+                famousFood: "Rayalaseema Ruchulu, Ragi Sangati, Natu Kodi Pulusu",
+                localiteInfo: "Villagers inside the fort area offer local homestays and can guide you to the best sunrise viewpoints over the gorge.",
+                localiteNumber: "+91 55555-55555 (Gandikota Guide Association)"
             },
-            // ─── Mumbai Places (index 14-20) ───
+            // ─── Arunachal Pradesh Places ───
             {
-                title: "Raigad Fort",
-                subtitle: "The majestic capital of the Maratha Empire",
-                location: "Raigad, Maharashtra",
-                img: "raigad_fort.jpg",
-                description: "Raigad Fort, perched at 2,700 feet above sea level in the Sahyadri mountains, served as the capital of Chhatrapati Shivaji Maharaj's Maratha Empire. The coronation of Shivaji Maharaj took place here on June 6, 1674, marking the formal establishment of the Maratha kingdom.\n\nThe fort features the iconic Maha Darwaja (Great Gate) standing 66 feet tall, the Jagdishwar Temple, the grand Raj Sabhamandap (court hall), and the tomb of Shivaji Maharaj. A ropeway now connects the base to the fort, offering breathtaking views of the surrounding valleys. The fort's strategic design with multiple gates and watchtowers showcases the military genius of the Maratha era.",
-                lat: 18.2352,
-                lng: 73.4478,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Veer / Mangaon Railway Station",
-                bestTime: "October – March",
-                temp: "24 – 36°C"
+                title: "Madhuri Lake",
+                subtitle: "A picturesque high-altitude lake named after the Bollywood actress",
+                location: "Tawang District, Arunachal Pradesh",
+                img: "assets/madhuri_lake.jpg",
+                description: "Originally known as Sangestar Tso, this spectacular lake was formed by a flash flood after an earthquake in 1950. It earned the name 'Madhuri Lake' after Bollywood actress Madhuri Dixit shot a dance sequence here for the film 'Koyla'. Surrounded by snow-capped mountains, its distinct feature is the upright tree trunks emerging from the water.",
+                lat: 27.6967,
+                lng: 91.8656,
+                airport: "Lokpriya Gopinath Bordoloi Intl Airport (GAU)",
+                railway: "Tezpur Railway Station",
+                bestTime: "April – October",
+                temp: "5 – 15°C",
+                famousFood: "Thukpa, Momos, Zan, Yak Butter Tea",
+                localiteInfo: "Army personnel stationed nearby often help tourists. Local Monpa drivers are experts at navigating the treacherous roads.",
+                localiteNumber: "+91 44444-44444 (Tawang Taxi Union)"
             },
             {
-                title: "Marine Drive",
-                subtitle: "The Queen's Necklace — Mumbai's iconic promenade",
-                location: "Mumbai, Maharashtra",
-                img: "marine_drive.png",
-                description: "Marine Drive is a 3.6 km long C-shaped promenade along the coast of South Mumbai, stretching from Nariman Point to Chowpatty Beach. Built in the 1920s, it's officially named Netaji Subhash Chandra Bose Road but is affectionately called the Queen's Necklace because of the way the street lights form a glittering arc at night.\n\nThe art deco buildings along Marine Drive are UNESCO heritage listed. The promenade is where all of Mumbai comes together — joggers at dawn, couples at sunset, and families enjoying bhelpuri from the stalls. It's the city's living room and the best place to feel Mumbai's pulse.",
-                lat: 18.9432,
-                lng: 72.8235,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Churchgate Railway Station",
+                title: "Tawang Monastery",
+                subtitle: "The largest monastery in India and second largest in the world",
+                location: "Tawang, Arunachal Pradesh",
+                img: "assets/tawang_monastery.jpg",
+                description: "The Tawang Monastery, also known as Gaden Namgyal Lhatse, is a majestic Buddhist monastery situated at an elevation of about 10,000 feet. Founded in the 17th century by Merak Lama Lodre Gyatso, it is a prominent spiritual center of the Gelug school of Mahayana Buddhism. The monastery features an impressive 18-foot high gilded statue of Buddha and a vast library of ancient scriptures.",
+                lat: 27.5878,
+                lng: 91.8596,
+                airport: "Lokpriya Gopinath Bordoloi Intl Airport (GAU)",
+                railway: "Tezpur Railway Station",
+                bestTime: "March – October",
+                temp: "5 – 21°C",
+                famousFood: "Khura, Gyapa Khazi, Butter Tea",
+                localiteInfo: "Resident monks are welcoming and usually happy to explain the history and significance of the Thangkas (paintings).",
+                localiteNumber: "+91 33333-33333 (Monastery Office)"
+            },
+            {
+                title: "Nuranang Falls",
+                subtitle: "A breathtaking and pristine waterfall",
+                location: "Tawang District, Arunachal Pradesh",
+                img: "assets/nuranang_falls.jpg",
+                description: "Also known as Bong Bong Falls, Nuranang Falls is a spectacularly beautiful 100-meter high waterfall situated amidst untouched forests. It is named after Nura, a local Monpa girl who reportedly helped an Indian soldier during the 1962 Sino-Indian War. The sheer volume and thunderous sound of the water make it a mesmerizing sight.",
+                lat: 27.5342,
+                lng: 92.0526,
+                airport: "Lokpriya Gopinath Bordoloi Intl Airport (GAU)",
+                railway: "Tezpur Railway Station",
+                bestTime: "April – October",
+                temp: "10 – 22°C",
+                famousFood: "Local Momos, Maggie at roadside stalls",
+                localiteInfo: "The area is quite remote, but the few local stall owners are hospitable and can share stories about the 1962 war.",
+                localiteNumber: "+91 22222-22222 (Jang Local Guide)"
+            },
+            {
+                title: "Parshuram Kund",
+                subtitle: "A sacred Hindu pilgrimage site on the Brahmaputra plateau",
+                location: "Lohit District, Arunachal Pradesh",
+                img: "assets/parshuram_kund.jpg",
+                description: "Parshuram Kund is a revered Hindu pilgrimage center situated on the lower reaches of the Lohit River. According to mythology, Sage Parshuram washed away the sin of matricide by bathing in these waters. Every year during Makar Sankranti, thousands of pilgrims visit to take a holy dip in the icy waters of the kund.",
+                lat: 27.8767,
+                lng: 96.3475,
+                airport: "Dibrugarh Airport (DIB)",
+                railway: "Tinsukia Railway Station",
                 bestTime: "November – February",
-                temp: "22 – 34°C"
+                temp: "12 – 25°C",
+                famousFood: "Apong (Rice Beer), Bamboo Shoot dishes",
+                localiteInfo: "During Makar Sankranti, local sadhus and volunteers assist pilgrims with the holy dip in the freezing waters.",
+                localiteNumber: "+91 11111-11111 (Parshuram Kund Trust)"
             },
             {
-                title: "Elephanta Caves",
-                subtitle: "UNESCO World Heritage rock-cut cave temples",
-                location: "Mumbai, Maharashtra",
-                img: "elephanta_caves.jpg",
-                description: "The Elephanta Caves are a collection of cave temples predominantly dedicated to Lord Shiva, located on Elephanta Island (Gharapuri) in Mumbai Harbour. Dating back to the 5th-8th century CE, these caves are a UNESCO World Heritage Site and showcase some of the finest examples of Indian rock-cut architecture.\n\nThe main cave features the famous 20-foot tall Trimurti sculpture depicting Shiva as the Creator, Preserver, and Destroyer. The caves are reached by a scenic one-hour ferry ride from the Gateway of India followed by a toy train and climb up the hill. The annual Elephanta Festival of classical music and dance adds to the island's cultural significance.",
-                lat: 18.9633,
-                lng: 72.9315,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Gateway of India Ferry Terminal",
-                bestTime: "November – February",
-                temp: "22 – 34°C"
-            },
-            {
-                title: "Chhatrapati Shivaji Terminus",
-                subtitle: "UNESCO World Heritage Victorian Gothic railway station",
-                location: "Mumbai, Maharashtra",
-                img: "csmt_terminus.jpg",
-                description: "Chhatrapati Shivaji Maharaj Terminus (CSMT), formerly Victoria Terminus, is a UNESCO World Heritage Site and one of the most magnificent railway stations in the world. Built in 1888 by British architect Frederick William Stevens, the station is a stunning blend of Victorian Gothic Revival and traditional Indian architecture.\n\nThe building features turrets, pointed arches, stained glass windows, ornamental tiles, and a grand central dome topped with a figure representing 'Progress'. Still serving as Mumbai's busiest railway station, it handles over 3 million commuters daily.",
-                lat: 18.9398,
-                lng: 72.8355,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "CSMT (itself)",
-                bestTime: "November – February",
-                temp: "22 – 34°C"
-            },
-            {
-                title: "Siddhivinayak Temple",
-                subtitle: "Mumbai's most revered Ganesh temple",
-                location: "Mumbai, Maharashtra",
-                img: "siddhivinayak_temple.png",
-                description: "The Shree Siddhivinayak Temple in Prabhadevi is one of the most visited and richest temples in Mumbai, dedicated to Lord Ganesha. Built in 1801 by Laxman Vithu and Deubai Patil, the temple's idol is unique — the trunk curves to the right, which is considered extremely auspicious.\n\nThe temple attracts devotees from all walks of life including Bollywood celebrities and politicians. Tuesday darshans see queues extending over 2 km. The temple has been renovated with marble and gold plating, and the inner sanctum features a wooden door with Ashtavinayak carvings.",
-                lat: 19.0167,
-                lng: 72.8304,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Dadar Railway Station",
-                bestTime: "Year-round",
-                temp: "24 – 36°C"
-            },
-            {
-                title: "Juhu Beach",
-                subtitle: "Mumbai's most famous beach and street food paradise",
-                location: "Mumbai, Maharashtra",
-                img: "juhu_beach.jpg",
-                description: "Juhu Beach is Mumbai's most iconic beach stretching 6 km along the Arabian Sea coast. It's where Bollywood stars live, cricket legends practice, and millions of Mumbaikars unwind every evening. The beach is famous for its street food — pav bhaji, pani puri, bhelpuri, and vada pav sold by hundreds of vendors.\n\nSunsets at Juhu are legendary, with the sky turning shades of orange and purple over the sea. On weekends, the beach comes alive with horse rides, giant wheels, and impromptu cricket matches. It's the most democratic space in Mumbai where billionaires and street vendors share the same sand.",
-                lat: 19.0988,
-                lng: 72.8267,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Andheri Railway Station",
-                bestTime: "October – March",
-                temp: "22 – 34°C"
-            },
-            {
-                title: "Haji Ali Dargah",
-                subtitle: "A stunning mosque floating on the Arabian Sea",
-                location: "Mumbai, Maharashtra",
-                img: "haji_ali.jpg",
-                description: "Haji Ali Dargah is an iconic mosque and tomb situated on a small islet 500 meters from the coast in the middle of Worli Bay. Built in 1431, the dargah is dedicated to the Muslim saint Pir Haji Ali Shah Bukhari and is one of Mumbai's most recognizable landmarks.\n\nThe pathway to the dargah is submerged during high tide, creating the illusion of a floating shrine. The white marble structure with its tall minaret is stunning against the blue sea. People of all faiths visit, and the qawwali performances inside create a deeply moving spiritual experience.",
-                lat: 18.9827,
-                lng: 72.8089,
-                airport: "Chhatrapati Shivaji Intl Airport (BOM)",
-                railway: "Mahalaxmi Railway Station",
-                bestTime: "October – March",
-                temp: "24 – 34°C"
+                title: "Ganga Lake (Gekar Sinyi)",
+                subtitle: "A tranquil forest lake near the capital",
+                location: "Itanagar, Arunachal Pradesh",
+                img: "assets/ganga_lake.png",
+                description: "Ganga Lake, locally known as Gekar Sinyi (meaning 'confined lake'), is a beautiful natural lake surrounded by primeval vegetation, towering forest trees, and vibrant orchids. Located near Itanagar, it is a perfect spot for boating, picnics, and unwinding in the lap of nature away from the city's hustle.",
+                lat: 27.0864,
+                lng: 93.5855,
+                airport: "Hollongi Airport (HGI)",
+                railway: "Naharlagun Railway Station",
+                bestTime: "October – April",
+                temp: "15 – 28°C",
+                famousFood: "Pika Pila, Pehak, Chura Sabji",
+                localiteInfo: "Local boat operators can take you to the most serene parts of the lake and point out unique orchid species.",
+                localiteNumber: "+91 12345-12345 (Itanagar Tourism)"
             },
             // ─── Kolhapur Places (index 21-27) ───
             {
                 title: "Mahalakshmi Temple",
                 subtitle: "One of the Shakti Peethas — Kolhapur's divine jewel",
                 location: "Kolhapur, Maharashtra",
-                img: "mahalakshmi_temple.jpg",
+                img: "assets/mahalakshmi_temple.jpg",
                 description: "The Mahalakshmi Temple in Kolhapur is one of the most sacred Shakti Peethas dedicated to Goddess Mahalakshmi (Ambabai). Built during the Chalukya dynasty in the 7th century, the temple is an architectural marvel with intricately carved stone pillars, a beautifully sculpted idol adorned with precious jewels, and a unique gemstone on the idol's crown that reflects sunlight in a dazzling manner.\n\nThe temple attracts millions of devotees annually, especially during Navratri and Kojagiri Purnima. The idol is made of gemstone and weighs approximately 40 kg. The nearby Rankala Lake adds to the spiritual atmosphere of the city.",
                 lat: 16.6946,
                 lng: 74.2306,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "October – March",
-                temp: "20 – 35°C"
+                temp: "20 – 35°C",
+                famousFood: "Kolhapuri Misal, Tambda & Pandhra Rassa",
+                localiteInfo: "Local flower vendors (Phulwale) outside the temple have been there for generations and know all temple timings.",
+                localiteNumber: "+91 23456-23456 (Temple Committee)"
             },
             {
                 title: "Panhala Fort",
                 subtitle: "The largest fort in the Deccan and Shivaji's stronghold",
                 location: "Kolhapur, Maharashtra",
-                img: "panhala_fort.jpg",
+                img: "assets/panhala_fort.jpg",
                 description: "Panhala Fort is one of the largest forts in the Deccan region, located 20 km northwest of Kolhapur at an elevation of 3,127 feet. Built between 1178 and 1209 CE by the Shilahara ruler Bhoja II, the fort has played a crucial role in Maratha history, most notably during Chhatrapati Shivaji Maharaj's legendary escape from the Mughal siege in 1660.\n\nThe fort features three massive double-walled gates (Teen Darwaza), the Sajja Kothi (Shivaji's residence), and granaries that could store enough grain to last for years. The panoramic views of the valley below and the monsoon mist make Panhala a breathtaking destination.",
                 lat: 16.8126,
                 lng: 74.1107,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "June – February",
-                temp: "18 – 32°C"
+                temp: "18 – 32°C",
+                famousFood: "Zunka Bhakar, Kolhapuri Thali",
+                localiteInfo: "Certified fort guides at the entrance can narrate the thrilling historical events of Shivaji Maharaj's escape.",
+                localiteNumber: "+91 34567-34567 (Panhala Guides)"
             },
             {
                 title: "Rankala Lake",
                 subtitle: "Kolhapur's beloved evening hangout and heritage lake",
                 location: "Kolhapur, Maharashtra",
-                img: "rankala_lake.png",
+                img: "assets/rankala_lake.png",
                 description: "Rankala Lake is a historic lake in the heart of Kolhapur, surrounded by beautiful gardens and a bustling promenade. The lake is home to the iconic Rankala Temple tower that rises from the center of the water. Originally an ancient reservoir, it has been the city's favorite relaxation spot for centuries.\n\nIn the evenings, the lakeside comes alive with street food vendors selling Kolhapuri misal, bhel, and the famous tambda-pandhra rassa. The newly developed jogging track, boat rides, and the stunning sunset views make it one of the most charming urban lakes in Maharashtra.",
                 lat: 16.6820,
                 lng: 74.2230,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "October – March",
-                temp: "20 – 34°C"
+                temp: "20 – 34°C",
+                famousFood: "Chaupati Bhel, Vada Pav, Sugarcane Juice",
+                localiteInfo: "The food stall owners around the lake are great to chat with and offer the best local street food recommendations.",
+                localiteNumber: "+91 45678-45678 (Kolhapur Helpdesk)"
             },
             {
                 title: "New Palace (Maharaja's Palace)",
                 subtitle: "A grand Indo-Saracenic palace museum",
                 location: "Kolhapur, Maharashtra",
-                img: "new_palace.jpg",
+                img: "assets/new_palace.jpg",
                 description: "The New Palace, also known as the Maharaja's Palace, was built in 1884 by Maharaja Chhatrapati Shahu Maharaj. The palace is a stunning example of Indo-Saracenic architecture combining Jain, Hindu, and Islamic styles with British colonial influences.\n\nNow serving as the Shahaji Chhatrapati Museum, it houses an impressive collection of arms, armor, royal costumes, stuffed wildlife, and the personal belongings of the Kolhapur royal family. The Darbar Hall with its Belgian chandeliers and Italian marble flooring is breathtaking.",
                 lat: 16.7000,
                 lng: 74.2350,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "October – March",
-                temp: "20 – 35°C"
+                temp: "20 – 35°C",
+                famousFood: "Rajbhog Shrikhand, Puran Poli",
+                localiteInfo: "Museum curators are very knowledgeable about the royal artifacts and can provide deeper insights into Maratha history.",
+                localiteNumber: "+91 56789-56789 (Museum Curator)"
             },
             {
                 title: "Jyotiba Temple",
                 subtitle: "A hilltop temple with panoramic views of Kolhapur",
                 location: "Kolhapur, Maharashtra",
-                img: "jyotiba_temple.png",
+                img: "assets/jyotiba_temple.png",
                 description: "The Jyotiba Temple is a revered hilltop shrine located about 18 km from Kolhapur, dedicated to Jyotiba — a combined form of Brahma, Vishnu, and Shiva. Perched at 3,124 feet, the temple offers spectacular views of the surrounding valleys and the distant Arabian Sea on clear days.\n\nThe temple is famous for its vibrant fairs during Chaitra Purnima when thousands of devotees climb the 300+ steps adorned with colorful gulal. The four dome structure with painted walls and the annual Yatra festival make it one of Kolhapur's most important cultural landmarks.",
                 lat: 16.7750,
                 lng: 74.0950,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "October – March",
-                temp: "18 – 30°C"
+                temp: "18 – 30°C",
+                famousFood: "Temple Prasadam, Local Sweets",
+                localiteInfo: "Locals celebrate the Chaitra Purnima fair with immense passion, throwing pink gulal everywhere. They are very guiding.",
+                localiteNumber: "+91 67890-67890 (Jyotiba Trust)"
             },
             {
                 title: "Dajipur Wildlife Sanctuary",
                 subtitle: "Home to the Indian Bison and rare wildlife",
                 location: "Kolhapur, Maharashtra",
-                img: "dajipur_sanctuary.png",
+                img: "assets/dajipur_sanctuary.png",
                 description: "Dajipur Wildlife Sanctuary (Radhanagari), located about 80 km from Kolhapur, is Maharashtra's first wildlife sanctuary and the only habitat of the endangered Indian Bison (Gaur) in the Western Ghats. Spread over 350 sq km of dense forest, it's a biodiversity hotspot.\n\nThe sanctuary is home to leopards, sloth bears, giant squirrels, king cobras, and over 225 species of birds. The misty hills, cascading streams, and bamboo forests create a jungle experience right out of a nature documentary. Safari jeeps take visitors deep into the forest.",
                 lat: 16.4000,
                 lng: 73.9900,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "October – May",
-                temp: "16 – 32°C"
+                temp: "16 – 32°C",
+                famousFood: "Ghavan, Malvani Fish Curry (nearby)",
+                localiteInfo: "Forest department guides are mandatory for safaris and possess incredible knowledge of the local flora and fauna.",
+                localiteNumber: "+91 78901-78901 (Forest Department)"
             },
             {
                 title: "Kolhapuri Chappal Market",
                 subtitle: "The birthplace of the world-famous Kolhapuri chappal",
                 location: "Kolhapur, Maharashtra",
-                img: "kolhapuri_chappal.jpg",
+                img: "assets/kolhapuri_chappal.jpg",
                 description: "The Kolhapuri Chappal Market in the Mahadwar Road area is where the legendary hand-crafted leather sandals originate. These GI-tagged chappals have been made by local artisans for over 800 years using traditional vegetable-tanned leather techniques passed down through generations.\n\nVisitors can watch artisans craft each chappal by hand, choose from hundreds of designs, and get custom-made pairs at factory prices. Beyond chappals, the market lane is also famous for Kolhapuri jewelry (saaj, thushi, nath), Kolhapuri jaggery, and the city's iconic masala and spice blends.",
                 lat: 16.6950,
                 lng: 74.2310,
                 airport: "Kolhapur Airport (KLH)",
                 railway: "Kolhapur Railway Station",
                 bestTime: "Year-round",
-                temp: "20 – 35°C"
+                temp: "20 – 35°C",
+                famousFood: "Kolhapuri Bhel, Kanda Bhaji",
+                localiteInfo: "The artisans (Kumbhars/Charmakars) are happy to show you their traditional leather crafting process if you ask politely.",
+                localiteNumber: "+91 89012-89012 (Artisan Association)"
             }
         ];
 
@@ -3575,6 +3723,44 @@
             document.getElementById('detail-railway').textContent = place.railway;
             document.getElementById('detail-best-time').textContent = place.bestTime;
             document.getElementById('detail-temp').textContent = place.temp;
+            
+            document.getElementById('insight-food').textContent = place.famousFood || 'Local cuisine';
+            
+            // Assign food image dynamically based on food name/keywords
+            let foodImgPath = 'assets/default_food.png';
+            const foodStr = (place.famousFood || '').toLowerCase();
+            const loc = (place.location || '').toLowerCase();
+            
+            if (foodStr.includes('litti') || foodStr.includes('kebab')) {
+                foodImgPath = 'assets/bihar_food.png';
+            } else if (foodStr.includes('tilkut') || foodStr.includes('laddu') || foodStr.includes('prasadam') || foodStr.includes('shrikhand') || foodStr.includes('sweet') || foodStr.includes('thekua')) {
+                foodImgPath = 'assets/sweets.png';
+            } else if (foodStr.includes('thali') || foodStr.includes('ruchulu')) {
+                foodImgPath = 'assets/south_thali.png';
+            } else if (foodStr.includes('thukpa') || foodStr.includes('momo') || foodStr.includes('zan')) {
+                foodImgPath = 'assets/arunachal_food.png';
+            } else if (foodStr.includes('bhel') || foodStr.includes('vada pav') || foodStr.includes('snack') || foodStr.includes('bhaji')) {
+                foodImgPath = 'assets/street_food.png';
+            } else if (foodStr.includes('misal') || foodStr.includes('zunka') || foodStr.includes('ghavan')) {
+                foodImgPath = 'assets/maharashtra_food.png';
+            } else if (foodStr.includes('chicken') || foodStr.includes('fish') || foodStr.includes('kodi')) {
+                foodImgPath = 'assets/andhra_food.png'; // Andhra image has bamboo chicken
+            } else {
+                // Fallbacks by location
+                if (loc.includes('bihar')) foodImgPath = 'assets/bihar_food.png';
+                else if (loc.includes('andhra')) foodImgPath = 'assets/south_thali.png';
+                else if (loc.includes('arunachal')) foodImgPath = 'assets/arunachal_food.png';
+                else if (loc.includes('maharashtra') || loc.includes('kolhapur')) foodImgPath = 'assets/maharashtra_food.png';
+            }
+            
+            document.getElementById('insight-food-img').src = place.foodImg || foodImgPath;
+            
+            document.getElementById('insight-localite').textContent = place.localiteInfo || 'Friendly locals are available near the site to guide you.';
+            document.getElementById('insight-contact').textContent = place.localiteNumber || 'Available on request at location';
+            
+            // Set phone link if number exists
+            const phoneMatch = (place.localiteNumber || '').match(/\+91\s\d{5}-\d{5}/);
+            document.getElementById('insight-contact').href = phoneMatch ? 'tel:' + phoneMatch[0].replace(/[-\s]/g, '') : '#';
 
             // Google Maps link
             document.getElementById('detail-maps-link').href = 
@@ -3585,6 +3771,19 @@
             mapContainer.innerHTML = `<iframe 
                 src="https://www.openstreetmap.org/export/embed.html?bbox=${place.lng - 0.02},${place.lat - 0.015},${place.lng + 0.02},${place.lat + 0.015}&layer=mapnik&marker=${place.lat},${place.lng}" 
                 loading="lazy"></iframe>`;
+
+            // Toggle Bluetooth Button visibility
+            if (place.title === "Great Buddha Statue") {
+                document.getElementById('bluetooth-secret-btn').style.display = 'inline-flex';
+                document.getElementById('hidden-gem-btn').style.display = 'none';
+            } else {
+                document.getElementById('bluetooth-secret-btn').style.display = 'none';
+                document.getElementById('hidden-gem-btn').style.display = 'inline-flex';
+            }
+            
+            // Reset state
+            document.getElementById('secret-3d-container').style.display = 'none';
+            document.getElementById('bluetooth-secret-btn').innerHTML = '<svg viewBox="0 0 24 24"><path d="M17.71 7.71L12 2h-1v7.59L6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 11 14.41V22h1l5.71-5.71-4.3-4.29 4.3-4.29zM13 5.83l1.88 1.88L13 9.59V5.83zm1.88 10.46L13 18.17v-3.76l1.88 1.88z"/></svg> Explore Hidden Secret';
 
             // Hide explore modal, show detail modal
             document.getElementById('explore-modal').style.display = 'none';
@@ -3604,28 +3803,28 @@
         // Mood Explorer Logic
         const moodDatabase = {
             spiritual: [
-                { title: "Ramdara Temple", desc: "A quiet temple where nature and devotion come together beautifully.", img: "spiritual_1.png" },
-                { title: "Isckon Temple", desc: "A beautiful temple offering calm vibes and Krishna devotion", img: "spiritual_2.jpg" },
-                { title: "Bhimashankar Temple", desc: "A holy place dedicated to Lord Shiva, known for its natural beauty.", img: "spiritual_3.png" },
-                { title: "Pataleshwar Cave Temple", desc: "A hidden heritage site in Pune with timeless rock-cut design.", img: "spiritual_4.jpg" }
+                { title: "Tirumala Temple", desc: "One of the richest and most revered pilgrimage centers in Andhra Pradesh.", img: "assets/tirumala.jpg" },
+                { title: "Mahabodhi Temple", desc: "A UNESCO World Heritage site in Bihar where Lord Buddha attained enlightenment.", img: "assets/bihar.jpg" },
+                { title: "Tawang Monastery", desc: "The largest Buddhist monastery in India, located amidst the mountains of Arunachal.", img: "assets/tawang_monastery.jpg" },
+                { title: "Padmavathi Temple", desc: "The divine shrine of the consort of Lord Venkateswara in Tirupati.", img: "assets/padmavati.jpg" }
             ],
             historic: [
-                { title: "Shaniwar Wada", desc: "A magnificent historic fortification representing the legacy of the Maratha Empire.", img: "historic_1.jpg" },
-                { title: "Raigad Fort", desc: "A sweeping historic fortress offering stunning climbing views over valleys.", img: "historic_2.jpg" },
-                { title: "Vetal Tekdi", desc: "An ancient rocky plateau offering a sprawling escape from the city.", img: "historic_3.jpg" },
-                { title: "Aga Khan Palace", desc: "A majestic palace with deep ties to India's freedom movement.", img: "historic_4.jpg" }
+                { title: "Taj Mahal", desc: "The ultimate monument of love and a marvel of Mughal architecture in Agra.", img: "assets/uttar_pradesh.png" },
+                { title: "Gandikota Fort", desc: "The Grand Canyon of India, featuring an ancient fort carved in red sandstone.", img: "assets/gandikota.jpg" },
+                { title: "Hawa Mahal", desc: "The stunning Palace of Winds, representing the royal heritage of Rajasthan.", img: "assets/rajasthan.jpg" },
+                { title: "Gateway of India", desc: "The iconic arch monument overlooking the Arabian Sea in Mumbai, Maharashtra.", img: "assets/maharashtra.png" }
             ],
             nature: [
-                { title: "Beautiful Sarasbaug", desc: "A peaceful garden for a calm stroll.", img: "nature_1.jpg" },
-                { title: "Friendship Garden", desc: "Breathe in peace at this serene environment.", img: "nature_2.jpg" },
-                { title: "Espresso Garden", desc: "A cozy café in Pune known for its great coffee and relaxing vibe.", img: "nature_3.jpg" },
-                { title: "Panshet Dam", desc: "A scenic dam near Pune, perfect for nature views and relaxation.", img: "nature_4.jpg" }
+                { title: "Kerala Backwaters", desc: "A serene network of tranquil canals and palm-lined lakes in God's Own Country.", img: "assets/kerala.jpg" },
+                { title: "Araku Valley", desc: "A lush, mist-covered hill station famous for its coffee plantations in Andhra.", img: "assets/araku.jpg" },
+                { title: "Madhuri Lake", desc: "A breathtaking high-altitude lake nestled in the snowy peaks of Arunachal Pradesh.", img: "assets/madhuri_lake.jpg" },
+                { title: "Meghalaya Waterfalls", desc: "The abode of clouds, home to majestic living root bridges and pristine falls.", img: "assets/meghalaya.png" }
             ],
             city: [
-                { title: "Streets of Europe", desc: "Vibrant architecture and modern commerce.", img: "city_1.jpg" },
-                { title: "Sky Walk Views", desc: "Enjoy majestic city views from high above.", img: "city_2.png" },
-                { title: "Koregaon Park", desc: "A stylish area in Pune blending nature, food, and nightlife.", img: "city_3.png" },
-                { title: "Phoenix Marketcity", desc: "A popular shopping mall in Pune known for brands, food, and entertainment.", img: "city_4.jpg" }
+                { title: "Bengaluru City", desc: "India's Silicon Valley, a bustling metropolis with vibrant cafes and innovation.", img: "assets/karnataka.jpg" },
+                { title: "Hyderabad Charm", desc: "A perfect blend of bustling modern IT corridors and ancient royal history.", img: "assets/telangana.png" },
+                { title: "Kolkata Heritage", desc: "The cultural capital, where colonial architecture meets vibrant street life.", img: "assets/west_bengal.jpg" },
+                { title: "Ahmedabad Riverfront", desc: "A dynamic city blending magnificent modern riverfronts with historic architecture.", img: "assets/gujarat.jpg" }
             ]
         };
 
@@ -3917,6 +4116,51 @@
             }, 1500);
         }
 
+        // Connect to ESP32 via Web Bluetooth
+        async function connectToSecretESP32() {
+            try {
+                const btn = document.getElementById('bluetooth-secret-btn');
+                btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation: spin 1s linear infinite;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Connecting...';
+                
+                // 1. Request the device matching the name prefix and service UUID
+                const device = await navigator.bluetooth.requestDevice({
+                    filters: [{ namePrefix: 'Gautam' }],
+                    optionalServices: ['4fafc201-1fb5-459e-8fcc-c5c9c331914b']
+                });
+                
+                btn.innerHTML = '<svg viewBox="0 0 24 24" style="animation: spin 1s linear infinite;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Pairing...';
+                
+                // 2. Connect to the GATT server
+                const server = await device.gatt.connect();
+                
+                // 3. Get the specific service
+                const service = await server.getPrimaryService('4fafc201-1fb5-459e-8fcc-c5c9c331914b');
+                
+                // 4. Get the specific characteristic
+                const characteristic = await service.getCharacteristic('beb5483e-36e1-4688-b7f5-ea07361b26a8');
+                
+                // 5. Read the value
+                const value = await characteristic.readValue();
+                const decoder = new TextDecoder('utf-8');
+                const secretText = decoder.decode(value);
+                
+                // 6. On success: Hide button, display 3D model and secret info
+                btn.style.display = 'none';
+                document.getElementById('secret-text').innerText = "ESP32 Says: " + secretText;
+                
+                // Ensure model-viewer container is visible
+                document.getElementById('secret-3d-container').style.display = 'block';
+                
+            } catch (error) {
+                console.error("Bluetooth error:", error);
+                const btn = document.getElementById('bluetooth-secret-btn');
+                btn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Connection Failed (Retry)';
+                btn.style.background = 'linear-gradient(135deg, #7f1d1d, #450a0a)';
+                btn.style.borderColor = '#b91c1c';
+            }
+        }
+
+
         // ─── Events / Festivals Tab Logic ───
         function switchMainTab(tab, element) {
             // Update main tab buttons
@@ -4008,6 +4252,132 @@
             });
         });
 
+        // ─── Trip Planner Logic ───
+        function generateTripPlan() {
+            const fromRaw = document.getElementById('trip-from').value.trim();
+            const fromCity = fromRaw ? (fromRaw.charAt(0).toUpperCase() + fromRaw.slice(1)) : "your location";
+            const destRaw = document.getElementById('trip-destination').value.trim();
+            const dest = destRaw.charAt(0).toUpperCase() + destRaw.slice(1);
+            const budgetCat = document.getElementById('trip-budget').value;
+            const transportMode = document.getElementById('trip-transport').value;
+            const days = parseInt(document.getElementById('trip-days').value) || 5;
+
+            if (!dest) {
+                alert("Please enter a destination to search!");
+                return;
+            }
+
+            // Hide results, show loader
+            document.getElementById('trip-results').style.display = 'none';
+            document.getElementById('trip-loading').style.display = 'block';
+
+            // Simulate API call delay
+            setTimeout(() => {
+                document.getElementById('trip-loading').style.display = 'none';
+                
+                // Realistic INR Pricing logic based on Indian travel standards
+                let hotelPerNight = 800; // Economy
+                let foodPerDay = 400;
+                let sightseeingPerDay = 300;
+                
+                let hotelName = "Backpacker Hostel / Zostel";
+                let hotelRating = "4.2";
+                let hotelImg = "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=150&h=150";
+
+                if (budgetCat === 'standard') {
+                    hotelPerNight = 3500;
+                    foodPerDay = 1500;
+                    sightseeingPerDay = 1000;
+                    hotelName = "Comfort Inn & Suites / Lemon Tree";
+                    hotelRating = "4.5";
+                    hotelImg = "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=150&h=150";
+                } else if (budgetCat === 'luxury') {
+                    hotelPerNight = 12000;
+                    foodPerDay = 4000;
+                    sightseeingPerDay = 3500;
+                    hotelName = "Taj Heritage Resort / Oberoi";
+                    hotelRating = "4.9";
+                    hotelImg = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=150&h=150";
+                }
+
+                // Realistic Transport Cost Calculation (Round trip)
+                let transportBase = 0;
+                const isSameCity = (fromCity.toLowerCase() === dest.toLowerCase());
+
+                if (isSameCity) {
+                    if (transportMode === 'car') transportBase = 1500; // Local rental
+                    else transportBase = 300; // Local bus/train
+                } else {
+                    if (transportMode === 'flight') transportBase = 8000; // Round trip economy
+                    else if (transportMode === 'train') transportBase = 2500; // 3AC/2AC round trip
+                    else if (transportMode === 'bus') transportBase = 1800; // Volvo Sleeper round trip
+                    else if (transportMode === 'car') transportBase = 10000; // Outstation cab
+                }
+
+                // Luxury transport bump
+                if (budgetCat === 'luxury' && transportMode === 'flight') transportBase = 18000; // Business class / premium
+                if (budgetCat === 'luxury' && transportMode === 'train') transportBase = 5000; // 1AC
+
+                // Calculate totals
+                const transport = transportBase + Math.floor(Math.random() * 500); // Add slight random variance
+                const hotelTotal = hotelPerNight * days;
+                const foodTotal = foodPerDay * days;
+                const miscTotal = sightseeingPerDay * days;
+                
+                const total = transport + hotelTotal + foodTotal + miscTotal;
+
+                // Format numbers to INR
+                const fmt = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+
+                document.getElementById('total-budget').textContent = fmt.format(total);
+                document.getElementById('cost-transport').textContent = fmt.format(transport);
+                document.getElementById('cost-hotel').textContent = fmt.format(hotelTotal);
+                document.getElementById('cost-food').textContent = fmt.format(foodTotal);
+                document.getElementById('cost-misc').textContent = fmt.format(miscTotal);
+
+                // Inject Daily Rates
+                document.getElementById('rate-transport').textContent = `Total (Round trip)`;
+                document.getElementById('rate-hotel').textContent = `${fmt.format(hotelPerNight)} / night x ${days}`;
+                document.getElementById('rate-food').textContent = `${fmt.format(foodPerDay)} / day x ${days}`;
+                document.getElementById('rate-misc').textContent = `${fmt.format(sightseeingPerDay)} / day x ${days}`;
+
+                // Inject Hotel with Google Maps Link
+                const hotelList = document.getElementById('hotel-list');
+                const searchQuery1 = encodeURIComponent(`${hotelName} in ${dest}`);
+                const searchQuery2 = encodeURIComponent(`Homestay in ${dest}`);
+
+                hotelList.innerHTML = `
+                    <a href="https://www.google.com/maps/search/${searchQuery1}" target="_blank" style="text-decoration: none;">
+                        <div style="display: flex; align-items: center; gap: 15px; padding: 15px; border: 1px solid #eee; border-radius: 12px; transition: background 0.3s; cursor: pointer;" onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                            <img src="${hotelImg}" alt="Hotel" style="width: 70px; height: 70px; border-radius: 10px; object-fit: cover;">
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #1565c0; font-size: 1.1rem; text-decoration: underline;">${hotelName}</h4>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+                                    <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 12px; font-weight: 600;">⭐ ${hotelRating}</span>
+                                    <span style="color: #666;">${fmt.format(hotelPerNight)} / night</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.google.com/maps/search/${searchQuery2}" target="_blank" style="text-decoration: none;">
+                        <div style="display: flex; align-items: center; gap: 15px; padding: 15px; border: 1px solid #eee; border-radius: 12px; transition: background 0.3s; cursor: pointer; margin-top: 15px;" onmouseover="this.style.background='#f9f9f9'" onmouseout="this.style.background='transparent'">
+                            <div style="width: 70px; height: 70px; border-radius: 10px; background: #e0f2f1; display:flex; align-items:center; justify-content:center; font-size:2rem;">🏨</div>
+                            <div>
+                                <h4 style="margin: 0 0 5px 0; color: #1565c0; font-size: 1.1rem; text-decoration: underline;">Local Homestay, ${dest}</h4>
+                                <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+                                    <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 12px; font-weight: 600;">⭐ 4.6</span>
+                                    <span style="color: #666;">${fmt.format(hotelPerNight * 0.7)} / night</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+
+                document.getElementById('trip-results').style.display = 'block';
+
+            }, 1200);
+        }
+
         // Initialize default mood on load
         window.addEventListener('DOMContentLoaded', () => {
             selectMood('spiritual', document.querySelector('.mood-chip'));
@@ -4015,7 +4385,7 @@
     </script>
 
     <!-- Floating Chatbot Widget -->
-    <div class="chatbot-label" id="chatbot-label">💬 Ask me about Maharashtra!</div>
+    <div class="chatbot-label" id="chatbot-label">💬 Ask me about India!</div>
 
     <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chatbot">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -58,7 +58,7 @@ body {
 
 .left-panel {
     width: 50%;
-    background-image: url('background.jpg');
+    background-image: url('assets/red_fort.jpg');
     background-size: cover;
     background-position: center;
     position: relative;

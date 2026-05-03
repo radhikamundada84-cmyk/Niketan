@@ -9,7 +9,17 @@
 // ─── Supabase Setup ───
 const SUPABASE_URL = '';
 const SUPABASE_ANON_KEY = '';
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let supabaseClient = null;
+
+if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+    try {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    } catch (e) {
+        console.error('Supabase initialization failed:', e);
+    }
+} else {
+    console.warn('Supabase credentials missing. Database functionality will be disabled.');
+}
 
 // ─── DOM References ───
 const loadingOverlay = document.getElementById('loading-overlay');
@@ -81,32 +91,36 @@ form.addEventListener('submit', async (e) => {
 
     try {
         // ─── Save to Supabase Database ───
-        const { data, error } = await supabaseClient
-            .from('users')
-            .insert([
-                {
-                    name: name,
-                    age: age,
-                    email: currentUserEmail
-                }
-            ]);
+        // Only try to insert if we have a URL and Key
+        if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+            const { data, error } = await supabaseClient
+                .from('users')
+                .insert([
+                    {
+                        name: name,
+                        age: age,
+                        email: currentUserEmail
+                    }
+                ]);
 
-        if (error) {
-            console.error('Supabase insert error:', error);
-            alert('Failed to save your info: ' + error.message);
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-            return;
+            if (error) {
+                console.error('Supabase insert error:', error);
+                alert('Failed to save your info to database: ' + error.message);
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                return;
+            }
+            console.log('User info saved to Supabase successfully!', data);
+        } else {
+            console.warn('Supabase not configured, skipping database insert and using localStorage fallback.');
         }
-
-        console.log('User info saved to Supabase successfully!', data);
 
         // Also save locally as backup
         localStorage.setItem('userInfo', JSON.stringify({ name, age, email: currentUserEmail }));
 
         // Also try sending to teammate's backend (non-blocking)
         try {
-            fetch('', {
+            fetch('http://192.168.236.25:3000/api/user-info', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, age, email: currentUserEmail }),

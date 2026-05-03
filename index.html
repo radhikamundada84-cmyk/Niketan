@@ -22,14 +22,14 @@
             <div class="left-panel">
                 <div class="image-overlay">
                     <h1 class="logo-text">Tourist Niketan</h1>
-                    <p class="tagline">Explore Maharashtra, Feel Aapla Culture</p>
+                    <p class="tagline">Explore India, Feel Aapna Culture</p>
                 </div>
             </div>
 
             <div class="right-panel">
 
                 <div class="login-section" id="login-container">
-                    <h2 class="welcome-text" id="auth-title" style="text-align: center;">कसं काय महाराष्ट्र?</h2>
+                    <h2 class="welcome-text" id="auth-title" style="text-align: center; font-size: 32px;">अतिथी देवो भव: <br> -Not Just Tourism, It’s Tradition</h2>
                     <p class="login-subtitle" id="auth-subtitle">Login with Google</p>
 
                     <div id="google-btn-container" style="margin-bottom: 50px; min-height: 48px;"></div>
@@ -60,14 +60,14 @@
         document.body.addEventListener('click', (e) => {
             if (e.target.id === 'toggle-link') {
                 e.preventDefault();
-                const isLogin = authTitle.textContent.includes('कसं काय पुणेकर?');
+                const isLogin = authTitle.textContent.includes('अतिथी देवो भव:');
 
                 if (isLogin) {
                     authTitle.textContent = 'Create Account';
                     authSubtitle.textContent = 'Sign up with Google';
                     toggleTextNode.innerHTML = `Already have an account? <a href="#" class="register-link" id="toggle-link">Login Now</a>`;
                 } else {
-                    authTitle.textContent = 'कसं काय पुणेकर?';
+                    authTitle.innerHTML = 'अतिथी देवो भव: <br> -Not Just Tourism, It’s Tradition';
                     authSubtitle.textContent = 'Login with Google';
                     toggleTextNode.innerHTML = `Don't have account? <a href="#" class="register-link" id="toggle-link">Register Now</a>`;
                 }
@@ -105,9 +105,16 @@
                 return;
             }
 
-            // Clear any stale/incomplete session data so login page shows fresh
-            localStorage.removeItem('sessionUser');
-            localStorage.removeItem('userInfoCompleted');
+            if (sessionData && !infoCompleted) {
+                // User logged in but didn't finish profile → send them back to finish
+                window.location.href = 'user-info.html';
+                return;
+            }
+
+            // ONLY clear if there's no session at all or explicitly requested
+            // (Leaving this commented out as a fresh state is better handled by a 'Not you?' button)
+            // localStorage.removeItem('sessionUser');
+            // localStorage.removeItem('userInfoCompleted');
 
             // Init Google Auth
             google.accounts.id.initialize({

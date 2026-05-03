@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Niketan - India's History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="background-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #111;"></div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="navbar-brand">Tourist Niketan</div>
+            <div class="nav-links">
+                <a href="main.html">Discover</a>
+                <a href="history.html">India's History</a>
+                <a href="main.html#events-section">Events</a>
+                <a href="#">Publications</a>
+            </div>
+        </div>
+
+        <div class="user-nav">
+            <div class="nav-icons">
+                <span class="icon">🔍</span>
+                <span class="icon">⚙️</span>
+                <span class="icon">🔔</span>
+            </div>
+            <button class="sign-in-btn" onclick="window.location.href='index.html'">Sign Out</button>
+        </div>
+    </nav>
+
+    <!-- Discover India's History Section -->
+    <section class="history-section" id="history-section" style="padding: 120px 5% 80px; background-color: #ffffff; color: #333; min-height: 100vh;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p style="color: #d32f2f; font-weight: bold; font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">A Legacy of Millennia</p>
+                <h2 style="font-size: 3rem; margin: 0; color: #b71c1c;">Discover India's History</h2>
+                <p style="color: #666; max-width: 600px; margin: 15px auto 0; font-size: 1.1rem;">Journey through time across the distinct historical landscapes of Indian states.</p>
+            </div>
+
+            <div class="history-track" style="display: flex; overflow-x: auto; gap: 30px; padding-bottom: 20px; scroll-behavior: smooth;">
+                <!-- Rajasthan -->
+                <div class="history-card" onclick="openHistoryModal('rajasthan')" style="min-width: 280px; height: 280px; position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: url('https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&q=80&w=400&h=400') center/cover;">
+                    <div class="history-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(60, 10, 10, 0.95) 0%, rgba(60, 10, 10, 0.5) 50%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; transition: background 0.3s;">
+                        <h3 style="font-size: 1.4rem; margin: 0 0 8px 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Rajasthan</h3>
+                        <p style="color: #eee; font-size: 0.85rem; margin: 0; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">The land of Rajput valor. Explore majestic forts, opulent palaces, and the golden sands.</p>
+                    </div>
+                </div>
+
+                <!-- Gujarat -->
+                <div class="history-card" onclick="openHistoryModal('gujarat')" style="min-width: 280px; height: 280px; position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: url('assets/gujarat_history_bg.png') center/cover;">
+                    <div class="history-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(60, 10, 10, 0.95) 0%, rgba(60, 10, 10, 0.5) 50%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; transition: background 0.3s;">
+                        <h3 style="font-size: 1.4rem; margin: 0 0 8px 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Gujarat</h3>
+                        <p style="color: #eee; font-size: 0.85rem; margin: 0; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">The Jewel of Western India. From ancient Indus sites to medieval stepwells and modern marvels.</p>
+                    </div>
+                </div>
+
+                <!-- Tamil Nadu -->
+                <div class="history-card" onclick="openHistoryModal('tamilnadu')" style="min-width: 280px; height: 280px; position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=400&h=400') center/cover;">
+                    <div class="history-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(60, 10, 10, 0.95) 0%, rgba(60, 10, 10, 0.5) 50%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; transition: background 0.3s;">
+                        <h3 style="font-size: 1.4rem; margin: 0 0 8px 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Tamil Nadu</h3>
+                        <p style="color: #eee; font-size: 0.85rem; margin: 0; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">The cradle of Dravidian culture. Witness architectural marvels of Chola and Pallava dynasties.</p>
+                    </div>
+                </div>
+
+                <!-- Maharashtra -->
+                <div class="history-card" onclick="openHistoryModal('maharashtra')" style="min-width: 280px; height: 280px; position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: url('assets/maharashtra_history_bg.png') center/cover;">
+                    <div class="history-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(60, 10, 10, 0.95) 0%, rgba(60, 10, 10, 0.5) 50%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; transition: background 0.3s;">
+                        <h3 style="font-size: 1.4rem; margin: 0 0 8px 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Maharashtra</h3>
+                        <p style="color: #eee; font-size: 0.85rem; margin: 0; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">The Maratha Empire. A landscape dotted with invincible forts and ancient cave temples.</p>
+                    </div>
+                </div>
+                
+                <!-- Bihar -->
+                <div class="history-card" onclick="openHistoryModal('bihar')" style="min-width: 280px; height: 280px; position: relative; cursor: pointer; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: url('assets/bihar_history_bg.png') center/cover;">
+                    <div class="history-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(60, 10, 10, 0.95) 0%, rgba(60, 10, 10, 0.5) 50%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; transition: background 0.3s;">
+                        <h3 style="font-size: 1.4rem; margin: 0 0 8px 0; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Bihar</h3>
+                        <p style="color: #eee; font-size: 0.85rem; margin: 0; line-height: 1.4; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">Cradle of Buddhism and ancient empires. Home to Nalanda University and Bodh Gaya.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .history-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .history-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(200,0,0,0.15);
+        }
+        .history-card:hover .history-overlay {
+            background: linear-gradient(to top, rgba(100, 15, 15, 0.95) 0%, rgba(100, 15, 15, 0.7) 100%);
+        }
+        
+        /* Hide scrollbar for a cleaner look */
+        .history-track::-webkit-scrollbar {
+            height: 8px;
+        }
+        .history-track::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 10px;
+        }
+        
+        /* Modal Styles */
+        .history-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .history-modal-content {
+            background-color: #fff;
+            margin: auto;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            overflow-y: auto;
+            max-height: 90vh;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+        /* Modal scrollbar styling */
+        .history-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .history-modal-content::-webkit-scrollbar-thumb {
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-modal {
+            color: #fff;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            transition: color 0.2s;
+        }
+        .close-modal:hover { color: #ff9800; }
+        .modal-image {
+            width: 100%;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+        }
+        .modal-text {
+            padding: 40px;
+            color: #444;
+        }
+        .modal-text h2 {
+            margin-top: 0;
+            color: #b71c1c;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .modal-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .modal-text h3 {
+            color: #d32f2f;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #ffcdd2;
+            padding-bottom: 5px;
+        }
+        .modal-text ul {
+            margin-top: 0;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        .modal-text li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Ensure navbar doesn't clash with dark background */
+        .navbar {
+            background-color: rgba(17, 17, 17, 0.9);
+            border-bottom: 1px solid #333;
+        }
+        .nav-links a { color: white; }
+        .navbar-brand { color: white; }
+        .nav-icons .icon { color: white; }
+    </style>
+
+    <!-- Modal HTML -->
+    <div id="historyModal" class="history-modal">
+        <div class="history-modal-content">
+            <span class="close-modal" onclick="closeHistoryModal()">&times;</span>
+            <div id="modalImage" class="modal-image"></div>
+            <div class="modal-text">
+                <h2 id="modalTitle">State Name</h2>
+                <div id="modalDescription">Detailed history goes here...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const stateHistory = {
+            'rajasthan': {
+                title: 'Rajasthan',
+                image: "url('https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&q=80&w=800&h=400')",
+                description: `
+                    <h3>History</h3>
+                    <p>Rajasthan, the Land of Kings, was ruled by various powerful Rajput dynasties who built magnificent forts and palaces. It witnessed legendary battles like Chittorgarh and Haldighati, standing as a testament to unparalleled bravery and honor against the Delhi Sultanate and Mughal Empire.</p>
+                    <h3>Freedom Fighters</h3>
+                    <ul>
+                        <li><strong>Sagarmal Gopa:</strong> A fiery freedom fighter from Jaisalmer who played a crucial role in the non-cooperation movement.</li>
+                        <li><strong>Vijay Singh Pathik:</strong> Led the Bijolia Kisan Andolan, one of the foremost peasant movements in India.</li>
+                        <li><strong>Pratap Singh Barhath:</strong> A revolutionary who actively participated in plots against the British Raj.</li>
+                    </ul>
+                    <h3>Culture</h3>
+                    <p>Rajasthan's culture is vibrant and colorful, famous for folk dances like Ghoomar and Kalbeliya, traditional Rajasthani attire, intricate handicrafts, and grand festivals like the Pushkar Camel Fair.</p>
+                `
+            },
+            'gujarat': {
+                title: 'Gujarat',
+                image: "url('assets/gujarat_history_bg.png')",
+                description: `
+                    <h3>History</h3>
+                    <p>Gujarat is home to some of the most prominent ancient sites of the Indus Valley Civilization, such as Lothal and Dholavira. It was a thriving maritime trade center and was later ruled by powerful dynasties like the Chalukyas (Solankis), the Delhi Sultanate, and the Maratha Empire.</p>
+                    <h3>Freedom Fighters</h3>
+                    <ul>
+                        <li><strong>Mahatma Gandhi:</strong> The Father of the Nation who led India to independence using non-violent civil disobedience.</li>
+                        <li><strong>Sardar Vallabhbhai Patel:</strong> Known as the "Iron Man of India," he played a leading role in the country's struggle for independence and its integration into a united, independent nation.</li>
+                        <li><strong>Shyamji Krishna Varma:</strong> An Indian revolutionary fighter, patriot, lawyer and journalist who founded the Indian Home Rule Society in London.</li>
+                    </ul>
+                    <h3>Culture</h3>
+                    <p>Gujarat has a highly distinctive and vibrant culture. It is world-renowned for its nine-night Navratri festival celebrated with Garba and Dandiya Raas dances, exquisite textiles (like Patola and Bandhani), and the spectacular Rann Utsav in the Kutch desert.</p>
+                `
+            },
+            'tamilnadu': {
+                title: 'Tamil Nadu',
+                image: "url('https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&q=80&w=800&h=400')",
+                description: `
+                    <h3>History</h3>
+                    <p>Tamil Nadu boasts one of the oldest continuous cultural histories in the world. Dominated by the powerful Chola, Pallava, and Pandya dynasties, it was a hub of ancient trade, maritime power, and monumental Dravidian architecture.</p>
+                    <h3>Freedom Fighters</h3>
+                    <ul>
+                        <li><strong>Subramania Bharati:</strong> A pioneer of modern Tamil poetry whose nationalist writings ignited the independence movement in South India.</li>
+                        <li><strong>V. O. Chidambaram Pillai:</strong> Known as the "Tamil Helmsman," he founded the Swadeshi Steam Navigation Company to challenge the British monopoly.</li>
+                        <li><strong>Tiruppur Kumaran:</strong> A young revolutionary who died holding the Indian flag during a protest against the British.</li>
+                    </ul>
+                    <h3>Culture</h3>
+                    <p>The state is deeply rooted in Carnatic music, Bharatanatyam dance, ancient Sangam literature, and magnificent Dravidian temple architecture. The Pongal harvest festival is a cornerstone of its cultural identity.</p>
+                `
+            },
+            'maharashtra': {
+                title: 'Maharashtra',
+                image: "url('assets/maharashtra_history_bg.png')",
+                description: `
+                    <h3>History</h3>
+                    <p>Maharashtra is famous for the formidable Maratha Empire founded by Chhatrapati Shivaji Maharaj in the 17th century. The state is dotted with strategic hill forts that were central to Maratha military tactics against the Mughals and later the British.</p>
+                    <h3>Freedom Fighters</h3>
+                    <ul>
+                        <li><strong>Bal Gangadhar Tilak:</strong> Known as "Lokmanya," he was the first leader of the Indian Independence Movement and gave the slogan "Swaraj is my birthright."</li>
+                        <li><strong>Vinayak Damodar Savarkar:</strong> A prominent revolutionary, writer, and political leader.</li>
+                        <li><strong>Bhikaji Cama:</strong> One of the prominent figures in the Indian independence movement, known for unfurling the first version of the Indian national flag in Germany.</li>
+                    </ul>
+                    <h3>Culture</h3>
+                    <p>Maharashtra's rich culture includes vibrant festivals like Ganesh Chaturthi, folk arts like Lavani, and historic traditions deeply connected to the legacy of the Maratha warriors and ancient Bhakti saints.</p>
+                `
+            },
+            'bihar': {
+                title: 'Bihar',
+                image: "url('assets/bihar_history_bg.png')",
+                description: `
+                    <h3>History</h3>
+                    <p>Bihar is the cradle of ancient Indian empires and religions. It was the center of the mighty Mauryan and Gupta empires. It is deeply significant spiritually as the birthplace of Buddhism (Bodh Gaya) and Jainism.</p>
+                    <h3>Freedom Fighters</h3>
+                    <ul>
+                        <li><strong>Dr. Rajendra Prasad:</strong> The first President of India and a major leader in the independence movement, heavily involved with Mahatma Gandhi.</li>
+                        <li><strong>Jayaprakash Narayan:</strong> Remembered for leading the mid-1970s opposition against Prime Minister Indira Gandhi, and his role in the Quit India Movement.</li>
+                        <li><strong>Kunwar Singh:</strong> A notable leader during the Indian Rebellion of 1857, who led the fight in Bihar despite his old age.</li>
+                    </ul>
+                    <h3>Culture</h3>
+                    <p>Bihar's culture is steeped in antiquity, known for Chhath Puja, intricate Madhubani paintings, and classical folk music. It remains a profound center for Buddhist and Jain pilgrimage.</p>
+                `
+            }
+        };
+
+        function openHistoryModal(stateId) {
+            const data = stateHistory[stateId];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalImage').style.backgroundImage = data.image;
+            document.getElementById('modalDescription').innerHTML = data.description;
+            document.getElementById('historyModal').style.display = 'flex';
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').style.display = 'none';
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('historyModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
